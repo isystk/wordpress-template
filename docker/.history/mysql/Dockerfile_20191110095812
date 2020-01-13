@@ -1,0 +1,16 @@
+FROM alpine:3.6
+
+MAINTAINER isystk
+
+# apacheのインストール
+RUN \
+    apk add --no-cache \
+    mysql
+
+# ポート設定
+EXPOSE 80 443
+
+RUN mkdir -p /run/apache2
+
+# フォアグラウンドでapache実行
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]

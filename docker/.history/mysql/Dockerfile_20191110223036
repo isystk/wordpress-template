@@ -1,0 +1,28 @@
+FROM alpine:latest
+
+MAINTAINER isystk
+
+RUN apk update
+
+# timezoneをAsia/Tokyoに設定する
+RUN apk --no-cache add tzdata && \
+    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
+    apk del tzdata
+
+# Installing packages MariaDB
+RUN apk add --no-cache mysql
+RUN addgroup mysql mysql
+
+# Work path
+WORKDIR /scripts
+
+# Copy of the MySQL startup script
+COPY scripts/start.sh start.sh
+RUN chmod a+x start.sh
+
+# Creating the persistent volume
+VOLUME [ "/var/lib/mysql" ]
+
+EXPOSE 3306
+
+ENTRYPOINT [ "./start.sh" ]
