@@ -1,0 +1,15 @@
+FROM alpine:3.6
+
+MAINTAINER isystk
+
+# apacheのインストール
+RUN \
+  apk update && \
+	apk add mysql mysql-client && \
+	addgroup mysql mysql
+
+# ポート設定
+EXPOSE 3306
+
+# フォアグラウンドでapache実行
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]

@@ -1,0 +1,18 @@
+FROM library/alpine
+
+# install apache with mod_ssl and supervisor
+RUN apk add --no-cache apache2 apache2-ssl supervisor
+
+# create directory for apache pidfile
+# RUN mkdir /run/apache2
+
+# add custom supervisor config for apache
+RUN mkdir /etc/supervisor.d
+ADD ./supervisord.conf /etc/supervisord.conf
+
+# add entrypont script
+ADD ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+EXPOSE 80 443
+CMD ["/entrypoint.sh"]
