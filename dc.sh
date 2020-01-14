@@ -1,5 +1,7 @@
 #! /bin/bash
 
+pushd ./docker
+
 MYSQL_CLIENT=$(dirname $0)/mysql/scripts
 PATH=$PATH:$MYSQL_CLIENT
 
