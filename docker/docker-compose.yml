@@ -14,8 +14,20 @@ services:
     volumes:
      - ./apache/conf.d:/etc/apache2/conf.d
      - ./apache/ssl:/etc/apache2/ssl
-     - ./apache/html:/var/www/localhost/htdocs
      - ./apache/logs:/var/log/apache2
+     - ../public:/var/www/html
+    depends_on:
+      - php
+
+  php:
+    image: ${PROJECT_NAME}/php
+    build:
+      context: "./php"
+      dockerfile: "Dockerfile"
+    volumes:
+      - ../public:/var/www/html
+    depends_on:
+      - mysql
 
   mysql:
     image: ${PROJECT_NAME}/mysql
@@ -35,3 +47,14 @@ services:
   #   - ./mysql/init:/docker-entrypoint-initdb.d
   #        #MySQL初回起動時の走らせたいsqlとかshとかを渡すため
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8888:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=test
+      - PMA_PASSWORD=test
+    depends_on:
+      - mysql

@@ -40,3 +40,29 @@ AH00558: httpd: Could not reliably determine the server's fully qualified domain
 [Mon Jan 13 08:45:54.728040 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.39 (Unix) LibreSSL/2.5.5 configured -- resuming normal operations
 [Mon Jan 13 08:45:54.728714 2020] [core:notice] [pid 1] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
 [Mon Jan 13 09:59:06.578415 2020] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+[Wed Jan 15 00:16:55.713984 2020] [ssl:warn] [pid 1] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.19.0.5. Set the 'ServerName' directive globally to suppress this message
+[Wed Jan 15 00:16:55.762245 2020] [ssl:warn] [pid 1] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed Jan 15 00:16:55.773963 2020] [ssl:warn] [pid 1] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jan 15 00:16:55.784398 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.41 (Unix) OpenSSL/1.1.1d configured -- resuming normal operations
+[Wed Jan 15 00:16:55.786821 2020] [core:notice] [pid 1] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Jan 15 00:42:57.587987 2020] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+[Wed Jan 15 00:43:07.355361 2020] [ssl:warn] [pid 1] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.19.0.5. Set the 'ServerName' directive globally to suppress this message
+[Wed Jan 15 00:43:07.416692 2020] [ssl:warn] [pid 1] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed Jan 15 00:43:07.430368 2020] [ssl:warn] [pid 1] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jan 15 00:43:07.441846 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.41 (Unix) OpenSSL/1.1.1d configured -- resuming normal operations
+[Wed Jan 15 00:43:07.444074 2020] [core:notice] [pid 1] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Jan 15 00:45:41.022844 2020] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+[Wed Jan 15 00:45:47.368299 2020] [ssl:warn] [pid 1] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.19.0.5. Set the 'ServerName' directive globally to suppress this message
+[Wed Jan 15 00:45:47.417084 2020] [ssl:warn] [pid 1] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed Jan 15 00:45:47.432593 2020] [ssl:warn] [pid 1] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jan 15 00:45:47.444826 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.41 (Unix) OpenSSL/1.1.1d configured -- resuming normal operations
+[Wed Jan 15 00:45:47.447015 2020] [core:notice] [pid 1] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Jan 15 00:45:51.366362 2020] [authz_core:error] [pid 8] [client 172.19.0.1:58836] AH01630: client denied by server configuration: /var/www/html/test.php
+[Wed Jan 15 00:45:52.829700 2020] [authz_core:error] [pid 8] [client 172.19.0.1:58836] AH01630: client denied by server configuration: /var/www/html/test.php
+[Wed Jan 15 00:46:11.798105 2020] [authz_core:error] [pid 7] [client 172.19.0.1:58844] AH01630: client denied by server configuration: /var/www/html/
+[Wed Jan 15 00:46:13.531163 2020] [authz_core:error] [pid 7] [client 172.19.0.1:58844] AH01630: client denied by server configuration: /var/www/html/
+[Wed Jan 15 00:46:14.392325 2020] [authz_core:error] [pid 7] [client 172.19.0.1:58844] AH01630: client denied by server configuration: /var/www/html/
+[Wed Jan 15 00:50:19.040604 2020] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
