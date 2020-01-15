@@ -415,3 +415,21 @@
 [15/Jan/2020:13:05:12 +0900] 172.21.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-includes/js/hoverintent-js.min.js?ver=2.2.1 HTTP/1.1" 1683
 [15/Jan/2020:13:05:12 +0900] 172.21.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-includes/js/wp-embed.min.js?ver=5.3.2 HTTP/1.1" 1399
 127.0.0.1 - - [15/Jan/2020:13:05:19 +0900] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.41 (Unix) OpenSSL/1.1.1d (internal dummy connection)"
+172.23.0.1 - - [15/Jan/2020:13:40:12 +0900] "GET / HTTP/1.1" 301 299 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[15/Jan/2020:13:40:12 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET / HTTP/1.1" 410
+[15/Jan/2020:13:40:16 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET / HTTP/1.1" 410
+172.23.0.1 - - [15/Jan/2020:13:40:18 +0900] "GET /sw.js HTTP/1.1" 301 304 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[15/Jan/2020:13:40:41 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-includes/css/dashicons.min.css?ver=5.3.2 HTTP/1.1" 47558
+[15/Jan/2020:13:40:41 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-includes/css/admin-bar.min.css?ver=5.3.2 HTTP/1.1" 21375
+[15/Jan/2020:13:40:41 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-includes/css/dist/block-library/style.min.css?ver=5.3.2 HTTP/1.1" 41467
+[15/Jan/2020:13:40:41 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-content/themes/twentytwenty/style.css?ver=1.1 HTTP/1.1" 119130
+[15/Jan/2020:13:40:41 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-content/themes/twentytwenty/assets/js/index.js?ver=1.1 HTTP/1.1" 25009
+[15/Jan/2020:13:40:39 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET / HTTP/1.1" 36268
+[15/Jan/2020:13:40:42 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-includes/js/wp-emoji-release.min.js?ver=5.3.2 HTTP/1.1" 13866
+[15/Jan/2020:13:40:42 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-includes/js/admin-bar.min.js?ver=5.3.2 HTTP/1.1" 3756
+[15/Jan/2020:13:40:42 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-includes/js/wp-embed.min.js?ver=5.3.2 HTTP/1.1" 1399
+[15/Jan/2020:13:40:42 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-includes/js/hoverintent-js.min.js?ver=2.2.1 HTTP/1.1" 1683
+[15/Jan/2020:13:40:42 +0900] 172.23.0.1 TLSv1.3 TLS_AES_128_GCM_SHA256 "GET /wp-content/themes/twentytwenty/print.css?ver=1.1 HTTP/1.1" 2574
+127.0.0.1 - - [15/Jan/2020:13:40:49 +0900] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.41 (Unix) OpenSSL/1.1.1d (internal dummy connection)"
+127.0.0.1 - - [15/Jan/2020:13:40:50 +0900] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.41 (Unix) OpenSSL/1.1.1d (internal dummy connection)"
+127.0.0.1 - - [15/Jan/2020:13:40:51 +0900] "OPTIONS * HTTP/1.0" 200 - "-" "Apache/2.4.41 (Unix) OpenSSL/1.1.1d (internal dummy connection)"

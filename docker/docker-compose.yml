@@ -16,6 +16,9 @@ services:
      - ./apache/ssl:/etc/apache2/ssl
      - ./apache/logs:/var/log/apache2
      - ../public:/var/www/html
+    networks:
+     - frontend
+     - backend
 
   php:
     image: ${PROJECT_NAME}/php
@@ -26,6 +29,8 @@ services:
     volumes:
      - ./php/logs:/var/log/php
      - ../public:/var/www/html
+    networks:
+     - backend
 
   mysql:
     image: ${PROJECT_NAME}/mysql
@@ -44,6 +49,8 @@ services:
   #        #DBの実体をおいておく
   #   - ./mysql/init:/docker-entrypoint-initdb.d
   #        #MySQL初回起動時の走らせたいsqlとかshとかを渡すため
+    networks:
+     - backend
 
   phpmyadmin:
     image: ${PROJECT_NAME}/phpmyadmin
@@ -59,3 +66,11 @@ services:
       - PMA_PASSWORD=password
     volumes:
       - "./phpmyadmin/sessions:/sessions"
+    networks:
+     - backend
+
+networks:
+  frontend:
+    external: true
+  backend:
+    external: true
