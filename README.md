@@ -15,6 +15,7 @@ Wordpress サンプル
 http://localhost:8888/
 
 ## Install
+./dc.sh all start
 
 ## Contribution
 

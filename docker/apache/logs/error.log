@@ -193,3 +193,10 @@ AH00558: httpd: Could not reliably determine the server's fully qualified domain
 [Wed Jan 15 11:32:10.548580 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.41 (Unix) OpenSSL/1.1.1d configured -- resuming normal operations
 [Wed Jan 15 11:32:10.549225 2020] [core:notice] [pid 1] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
 [Wed Jan 15 11:36:26.007585 2020] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+[Wed Jan 15 11:48:21.757994 2020] [ssl:warn] [pid 1] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.21.0.2. Set the 'ServerName' directive globally to suppress this message
+[Wed Jan 15 11:48:21.814516 2020] [ssl:warn] [pid 1] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed Jan 15 11:48:21.841236 2020] [ssl:warn] [pid 1] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jan 15 11:48:21.846870 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.41 (Unix) OpenSSL/1.1.1d configured -- resuming normal operations
+[Wed Jan 15 11:48:21.847345 2020] [core:notice] [pid 1] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Jan 15 13:05:31.534372 2020] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
