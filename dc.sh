@@ -42,6 +42,7 @@ case ${1} in
               rm -Rf ./apache/logs/*
               rm -Rf ./php/logs/*
               rm -Rf ../public/wp-config.php
+          ;;
           start)
               docker-compose up -d
           ;;
