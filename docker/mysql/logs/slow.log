@@ -1,0 +1,498 @@
+mysqld, Version: 5.7.28-log (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+mysqld, Version: 5.7.28-log (MySQL Community Server (GPL)). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+mysqld, Version: 5.7.28-log (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2020-01-15T01:20:38.206782Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     6
+# Query_time: 0.016906  Lock_time: 0.000076 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051238;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:38.248354Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     6
+# Query_time: 0.002230  Lock_time: 0.000083 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051238;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:38.251456Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     6
+# Query_time: 0.000676  Lock_time: 0.000220 Rows_sent: 1  Rows_examined: 68
+SET timestamp=1579051238;
+SELECT 1 FROM (SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`COLUMN_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`TABLE_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES`) t WHERE `IS_GRANTABLE` = 'YES' AND '''root''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2020-01-15T01:20:38.252941Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     6
+# Query_time: 0.000895  Lock_time: 0.000137 Rows_sent: 1  Rows_examined: 55
+SET timestamp=1579051238;
+SELECT 1 FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE `PRIVILEGE_TYPE` = 'CREATE USER' AND '''root''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2020-01-15T01:20:38.260404Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     6
+# Query_time: 0.000367  Lock_time: 0.000102 Rows_sent: 41  Rows_examined: 41
+use mysql;
+SET timestamp=1579051238;
+SELECT `CHARACTER_SET_NAME` AS `Charset`, `DEFAULT_COLLATE_NAME` AS `Default collation`, `DESCRIPTION` AS `Description`, `MAXLEN` AS `Maxlen` FROM `information_schema`.`CHARACTER_SETS`;
+# Time: 2020-01-15T01:20:38.261764Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     6
+# Query_time: 0.000754  Lock_time: 0.000087 Rows_sent: 222  Rows_examined: 222
+SET timestamp=1579051238;
+SELECT `COLLATION_NAME` AS `Collation`, `CHARACTER_SET_NAME` AS `Charset`, `ID` AS `Id`, `IS_DEFAULT` AS `Default`, `IS_COMPILED` AS `Compiled`, `SORTLEN` AS `Sortlen` FROM `information_schema`.`COLLATIONS`;
+# Time: 2020-01-15T01:20:38.467393Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     6
+# Query_time: 0.004507  Lock_time: 0.000170 Rows_sent: 4  Rows_examined: 32
+SET timestamp=1579051238;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC;
+# Time: 2020-01-15T01:20:38.476158Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     6
+# Query_time: 0.002899  Lock_time: 0.000187 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051238;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:20:38.479922Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     6
+# Query_time: 0.003069  Lock_time: 0.000161 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051238;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:20:40.729852Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     8
+# Query_time: 0.004317  Lock_time: 0.000074 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051240;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:40.739644Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     8
+# Query_time: 0.005610  Lock_time: 0.000117 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051240;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:40.747521Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     8
+# Query_time: 0.007232  Lock_time: 0.000276 Rows_sent: 4  Rows_examined: 32
+SET timestamp=1579051240;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC;
+# Time: 2020-01-15T01:20:40.750860Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     8
+# Query_time: 0.002646  Lock_time: 0.000148 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051240;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:20:40.756611Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:     8
+# Query_time: 0.005244  Lock_time: 0.000121 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051240;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:20:40.789539Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    10
+# Query_time: 0.005553  Lock_time: 0.000124 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051240;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:40.795596Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    10
+# Query_time: 0.003187  Lock_time: 0.000075 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051240;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:40.922317Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    12
+# Query_time: 0.006218  Lock_time: 0.000106 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051240;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:40.928035Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    12
+# Query_time: 0.002872  Lock_time: 0.000080 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051240;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:40.985921Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    14
+# Query_time: 0.006640  Lock_time: 0.000105 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051240;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:41.002305Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    14
+# Query_time: 0.010639  Lock_time: 0.000108 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051241;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:47.734076Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    16
+# Query_time: 0.020280  Lock_time: 0.000099 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051247;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:47.745285Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    16
+# Query_time: 0.007516  Lock_time: 0.000094 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051247;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:47.756463Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    16
+# Query_time: 0.005791  Lock_time: 0.000145 Rows_sent: 4  Rows_examined: 16
+SET timestamp=1579051247;
+SELECT *,
+                    CAST(BIN_NAME AS CHAR CHARACTER SET utf8) AS SCHEMA_NAME
+                FROM (SELECT
+                BINARY s.SCHEMA_NAME AS BIN_NAME,
+                s.DEFAULT_COLLATION_NAME
+                   FROM `information_schema`.SCHEMATA s 
+                    GROUP BY BINARY s.SCHEMA_NAME, s.DEFAULT_COLLATION_NAME
+                    ORDER BY BINARY `SCHEMA_NAME` ASC) a;
+# Time: 2020-01-15T01:20:47.757741Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    16
+# Query_time: 0.000762  Lock_time: 0.000184 Rows_sent: 222  Rows_examined: 222
+SET timestamp=1579051247;
+SELECT `COLLATION_NAME` AS `Collation`, `CHARACTER_SET_NAME` AS `Charset`, `ID` AS `Id`, `IS_DEFAULT` AS `Default`, `IS_COMPILED` AS `Compiled`, `SORTLEN` AS `Sortlen` FROM `information_schema`.`COLLATIONS`;
+# Time: 2020-01-15T01:20:47.760370Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    16
+# Query_time: 0.000343  Lock_time: 0.000102 Rows_sent: 41  Rows_examined: 41
+SET timestamp=1579051247;
+SELECT `CHARACTER_SET_NAME` AS `Charset`, `DEFAULT_COLLATE_NAME` AS `Default collation`, `DESCRIPTION` AS `Description`, `MAXLEN` AS `Maxlen` FROM `information_schema`.`CHARACTER_SETS`;
+# Time: 2020-01-15T01:20:49.715108Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    18
+# Query_time: 0.007083  Lock_time: 0.000113 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051249;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:49.722487Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    18
+# Query_time: 0.004976  Lock_time: 0.000242 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051249;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:53.109774Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    20
+# Query_time: 0.016896  Lock_time: 0.000110 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051253;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:53.117575Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    20
+# Query_time: 0.005278  Lock_time: 0.000104 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051253;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:20:53.126163Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    20
+# Query_time: 0.004020  Lock_time: 0.000251 Rows_sent: 4  Rows_examined: 16
+SET timestamp=1579051253;
+SELECT *,
+                    CAST(BIN_NAME AS CHAR CHARACTER SET utf8) AS SCHEMA_NAME
+                FROM (SELECT
+                BINARY s.SCHEMA_NAME AS BIN_NAME,
+                s.DEFAULT_COLLATION_NAME
+                   FROM `information_schema`.SCHEMATA s 
+                    GROUP BY BINARY s.SCHEMA_NAME, s.DEFAULT_COLLATION_NAME
+                    ORDER BY BINARY `SCHEMA_NAME` ASC) a;
+# Time: 2020-01-15T01:20:53.127424Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    20
+# Query_time: 0.000783  Lock_time: 0.000123 Rows_sent: 222  Rows_examined: 222
+SET timestamp=1579051253;
+SELECT `COLLATION_NAME` AS `Collation`, `CHARACTER_SET_NAME` AS `Charset`, `ID` AS `Id`, `IS_DEFAULT` AS `Default`, `IS_COMPILED` AS `Compiled`, `SORTLEN` AS `Sortlen` FROM `information_schema`.`COLLATIONS`;
+# Time: 2020-01-15T01:20:53.129971Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    20
+# Query_time: 0.000312  Lock_time: 0.000130 Rows_sent: 41  Rows_examined: 41
+SET timestamp=1579051253;
+SELECT `CHARACTER_SET_NAME` AS `Charset`, `DEFAULT_COLLATE_NAME` AS `Default collation`, `DESCRIPTION` AS `Description`, `MAXLEN` AS `Maxlen` FROM `information_schema`.`CHARACTER_SETS`;
+# Time: 2020-01-15T01:21:48.395326Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    22
+# Query_time: 0.007449  Lock_time: 0.000116 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051308;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:21:48.408915Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    22
+# Query_time: 0.010780  Lock_time: 0.000226 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051308;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:21:48.419638Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    22
+# Query_time: 0.006935  Lock_time: 0.000202 Rows_sent: 4  Rows_examined: 16
+SET timestamp=1579051308;
+SELECT *,
+                    CAST(BIN_NAME AS CHAR CHARACTER SET utf8) AS SCHEMA_NAME
+                FROM (SELECT
+                BINARY s.SCHEMA_NAME AS BIN_NAME,
+                s.DEFAULT_COLLATION_NAME
+                   FROM `information_schema`.SCHEMATA s 
+                    GROUP BY BINARY s.SCHEMA_NAME, s.DEFAULT_COLLATION_NAME
+                    ORDER BY BINARY `SCHEMA_NAME` ASC) a;
+# Time: 2020-01-15T01:21:48.423077Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    22
+# Query_time: 0.001198  Lock_time: 0.000122 Rows_sent: 222  Rows_examined: 222
+SET timestamp=1579051308;
+SELECT `COLLATION_NAME` AS `Collation`, `CHARACTER_SET_NAME` AS `Charset`, `ID` AS `Id`, `IS_DEFAULT` AS `Default`, `IS_COMPILED` AS `Compiled`, `SORTLEN` AS `Sortlen` FROM `information_schema`.`COLLATIONS`;
+# Time: 2020-01-15T01:21:48.427478Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    22
+# Query_time: 0.000493  Lock_time: 0.000161 Rows_sent: 41  Rows_examined: 41
+SET timestamp=1579051308;
+SELECT `CHARACTER_SET_NAME` AS `Charset`, `DEFAULT_COLLATE_NAME` AS `Default collation`, `DESCRIPTION` AS `Description`, `MAXLEN` AS `Maxlen` FROM `information_schema`.`CHARACTER_SETS`;
+# Time: 2020-01-15T01:21:48.610201Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    22
+# Query_time: 0.016281  Lock_time: 0.000852 Rows_sent: 4  Rows_examined: 32
+SET timestamp=1579051308;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC;
+# Time: 2020-01-15T01:21:48.618497Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    22
+# Query_time: 0.007518  Lock_time: 0.000160 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051308;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:21:48.622473Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    22
+# Query_time: 0.002768  Lock_time: 0.000119 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051308;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:21:50.788405Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    24
+# Query_time: 0.010280  Lock_time: 0.000100 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051310;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:21:50.793314Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    24
+# Query_time: 0.002865  Lock_time: 0.000164 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051310;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:21:50.888822Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    26
+# Query_time: 0.002819  Lock_time: 0.000094 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051310;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:21:50.893683Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    26
+# Query_time: 0.003004  Lock_time: 0.000083 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051310;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:21:50.909767Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    26
+# Query_time: 0.014638  Lock_time: 0.000220 Rows_sent: 4  Rows_examined: 32
+SET timestamp=1579051310;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC;
+# Time: 2020-01-15T01:21:50.918114Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    26
+# Query_time: 0.007581  Lock_time: 0.000134 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051310;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:21:50.922168Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    26
+# Query_time: 0.002173  Lock_time: 0.000126 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051310;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:21:50.949852Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    28
+# Query_time: 0.005391  Lock_time: 0.000122 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051310;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:21:50.954183Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    28
+# Query_time: 0.002117  Lock_time: 0.000101 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051310;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:21:51.073008Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    30
+# Query_time: 0.003045  Lock_time: 0.000174 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051311;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:21:51.078186Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    30
+# Query_time: 0.003139  Lock_time: 0.000106 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051311;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:22:42.310956Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    32
+# Query_time: 0.010433  Lock_time: 0.001998 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051362;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:22:42.319983Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    32
+# Query_time: 0.002928  Lock_time: 0.000128 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051362;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:22:42.323567Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    32
+# Query_time: 0.002164  Lock_time: 0.000130 Rows_sent: 4  Rows_examined: 16
+SET timestamp=1579051362;
+SELECT *,
+                    CAST(BIN_NAME AS CHAR CHARACTER SET utf8) AS SCHEMA_NAME
+                FROM (SELECT
+                BINARY s.SCHEMA_NAME AS BIN_NAME,
+                s.DEFAULT_COLLATION_NAME
+                   FROM `information_schema`.SCHEMATA s 
+                    GROUP BY BINARY s.SCHEMA_NAME, s.DEFAULT_COLLATION_NAME
+                    ORDER BY BINARY `SCHEMA_NAME` ASC) a;
+# Time: 2020-01-15T01:22:42.325246Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    32
+# Query_time: 0.001161  Lock_time: 0.000094 Rows_sent: 222  Rows_examined: 222
+SET timestamp=1579051362;
+SELECT `COLLATION_NAME` AS `Collation`, `CHARACTER_SET_NAME` AS `Charset`, `ID` AS `Id`, `IS_DEFAULT` AS `Default`, `IS_COMPILED` AS `Compiled`, `SORTLEN` AS `Sortlen` FROM `information_schema`.`COLLATIONS`;
+# Time: 2020-01-15T01:22:42.332622Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    32
+# Query_time: 0.000276  Lock_time: 0.000086 Rows_sent: 41  Rows_examined: 41
+SET timestamp=1579051362;
+SELECT `CHARACTER_SET_NAME` AS `Charset`, `DEFAULT_COLLATE_NAME` AS `Default collation`, `DESCRIPTION` AS `Description`, `MAXLEN` AS `Maxlen` FROM `information_schema`.`CHARACTER_SETS`;
+# Time: 2020-01-15T01:22:42.414213Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    32
+# Query_time: 0.009226  Lock_time: 0.000186 Rows_sent: 4  Rows_examined: 32
+SET timestamp=1579051362;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC;
+# Time: 2020-01-15T01:22:42.417779Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    32
+# Query_time: 0.002503  Lock_time: 0.000152 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051362;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:22:42.421306Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    32
+# Query_time: 0.002838  Lock_time: 0.000139 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051362;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:22:44.284341Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    34
+# Query_time: 0.012402  Lock_time: 0.000218 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051364;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:22:44.299341Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    34
+# Query_time: 0.012943  Lock_time: 0.000095 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051364;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:22:44.540024Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    36
+# Query_time: 0.006335  Lock_time: 0.000211 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051364;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:22:44.554204Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    36
+# Query_time: 0.003237  Lock_time: 0.000091 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051364;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:22:44.584040Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    38
+# Query_time: 0.004298  Lock_time: 0.000148 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051364;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:22:44.603490Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    38
+# Query_time: 0.016831  Lock_time: 0.000143 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051364;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:22:44.613181Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    38
+# Query_time: 0.008524  Lock_time: 0.000951 Rows_sent: 4  Rows_examined: 32
+SET timestamp=1579051364;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC;
+# Time: 2020-01-15T01:22:44.616591Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    38
+# Query_time: 0.002810  Lock_time: 0.000125 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051364;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:22:44.623681Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    38
+# Query_time: 0.006453  Lock_time: 0.000115 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051364;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:22:44.802226Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    40
+# Query_time: 0.028219  Lock_time: 0.000117 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051364;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:22:44.819901Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    40
+# Query_time: 0.015320  Lock_time: 0.000097 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051364;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:39.571109Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    42
+# Query_time: 0.006134  Lock_time: 0.000156 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051539;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:39.619651Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    42
+# Query_time: 0.002852  Lock_time: 0.000094 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051539;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:39.623490Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    42
+# Query_time: 0.000687  Lock_time: 0.000245 Rows_sent: 1  Rows_examined: 68
+SET timestamp=1579051539;
+SELECT 1 FROM (SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`COLUMN_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`TABLE_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES`) t WHERE `IS_GRANTABLE` = 'YES' AND '''root''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2020-01-15T01:25:39.624366Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    42
+# Query_time: 0.000336  Lock_time: 0.000135 Rows_sent: 1  Rows_examined: 55
+SET timestamp=1579051539;
+SELECT 1 FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE `PRIVILEGE_TYPE` = 'CREATE USER' AND '''root''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2020-01-15T01:25:39.632750Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    42
+# Query_time: 0.000415  Lock_time: 0.000136 Rows_sent: 41  Rows_examined: 41
+SET timestamp=1579051539;
+SELECT `CHARACTER_SET_NAME` AS `Charset`, `DEFAULT_COLLATE_NAME` AS `Default collation`, `DESCRIPTION` AS `Description`, `MAXLEN` AS `Maxlen` FROM `information_schema`.`CHARACTER_SETS`;
+# Time: 2020-01-15T01:25:39.635474Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    42
+# Query_time: 0.001917  Lock_time: 0.000101 Rows_sent: 222  Rows_examined: 222
+SET timestamp=1579051539;
+SELECT `COLLATION_NAME` AS `Collation`, `CHARACTER_SET_NAME` AS `Charset`, `ID` AS `Id`, `IS_DEFAULT` AS `Default`, `IS_COMPILED` AS `Compiled`, `SORTLEN` AS `Sortlen` FROM `information_schema`.`COLLATIONS`;
+# Time: 2020-01-15T01:25:39.839375Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    42
+# Query_time: 0.004672  Lock_time: 0.000317 Rows_sent: 4  Rows_examined: 32
+SET timestamp=1579051539;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC;
+# Time: 2020-01-15T01:25:39.846095Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    42
+# Query_time: 0.004291  Lock_time: 0.000126 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051539;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:25:39.849348Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    42
+# Query_time: 0.002457  Lock_time: 0.000198 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051539;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:25:41.902755Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    44
+# Query_time: 0.011413  Lock_time: 0.000118 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051541;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:41.907350Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    44
+# Query_time: 0.002158  Lock_time: 0.000078 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051541;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:41.993908Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    46
+# Query_time: 0.003133  Lock_time: 0.000088 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051541;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:42.000712Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    46
+# Query_time: 0.003140  Lock_time: 0.000140 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051542;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:42.007297Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    46
+# Query_time: 0.005645  Lock_time: 0.000264 Rows_sent: 4  Rows_examined: 32
+SET timestamp=1579051542;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC;
+# Time: 2020-01-15T01:25:42.013127Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    46
+# Query_time: 0.005347  Lock_time: 0.000131 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051542;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:25:42.019464Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    46
+# Query_time: 0.003587  Lock_time: 0.000156 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579051542;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T01:25:42.041748Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    48
+# Query_time: 0.002370  Lock_time: 0.000074 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051542;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:42.048664Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    48
+# Query_time: 0.004302  Lock_time: 0.000187 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051542;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:42.158534Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    50
+# Query_time: 0.003747  Lock_time: 0.000174 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051542;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:42.165441Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    50
+# Query_time: 0.002171  Lock_time: 0.000071 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051542;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:42.225258Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    52
+# Query_time: 0.007813  Lock_time: 0.000113 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051542;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T01:25:42.234392Z
+# User@Host: root[root] @ docker_phpmyadmin_1.docker_default [172.21.0.4]  Id:    52
+# Query_time: 0.005894  Lock_time: 0.000156 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1579051542;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
