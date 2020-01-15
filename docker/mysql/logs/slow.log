@@ -569,3 +569,268 @@ SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.ter
 # Query_time: 0.012679  Lock_time: 0.011776 Rows_sent: 1  Rows_examined: 3
 SET timestamp=1579061112;
 SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') AND tt.count > 0 ORDER BY t.name ASC;
+mysqld, Version: 5.7.28-log (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+mysqld, Version: 5.7.28-log (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+mysqld, Version: 5.7.28-log (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2020-01-15T04:40:41.567439Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.3]  Id:     2
+# Query_time: 0.034877  Lock_time: 0.024404 Rows_sent: 1  Rows_examined: 4
+use wordpress;
+SET timestamp=1579063241;
+SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (1) ORDER BY t.name ASC;
+# Time: 2020-01-15T04:40:41.782631Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.3]  Id:     2
+# Query_time: 0.000531  Lock_time: 0.000199 Rows_sent: 1  Rows_examined: 3
+SET timestamp=1579063241;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') AND tt.count > 0 ORDER BY t.name ASC;
+mysqld, Version: 5.7.28-log (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2020-01-15T04:41:20.428452Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     2
+# Query_time: 0.032720  Lock_time: 0.000122 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063280;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:20.477731Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     2
+# Query_time: 0.002220  Lock_time: 0.000072 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063280;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:20.480524Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     2
+# Query_time: 0.000616  Lock_time: 0.000208 Rows_sent: 1  Rows_examined: 68
+SET timestamp=1579063280;
+SELECT 1 FROM (SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`COLUMN_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`TABLE_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES`) t WHERE `IS_GRANTABLE` = 'YES' AND '''root''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2020-01-15T04:41:20.480912Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     2
+# Query_time: 0.000226  Lock_time: 0.000069 Rows_sent: 1  Rows_examined: 55
+SET timestamp=1579063280;
+SELECT 1 FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE `PRIVILEGE_TYPE` = 'CREATE USER' AND '''root''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2020-01-15T04:41:20.489586Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     2
+# Query_time: 0.000505  Lock_time: 0.000119 Rows_sent: 41  Rows_examined: 41
+use mysql;
+SET timestamp=1579063280;
+SELECT `CHARACTER_SET_NAME` AS `Charset`, `DEFAULT_COLLATE_NAME` AS `Default collation`, `DESCRIPTION` AS `Description`, `MAXLEN` AS `Maxlen` FROM `information_schema`.`CHARACTER_SETS`;
+# Time: 2020-01-15T04:41:20.491660Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     2
+# Query_time: 0.001167  Lock_time: 0.000111 Rows_sent: 222  Rows_examined: 222
+SET timestamp=1579063280;
+SELECT `COLLATION_NAME` AS `Collation`, `CHARACTER_SET_NAME` AS `Charset`, `ID` AS `Id`, `IS_DEFAULT` AS `Default`, `IS_COMPILED` AS `Compiled`, `SORTLEN` AS `Sortlen` FROM `information_schema`.`COLLATIONS`;
+# Time: 2020-01-15T04:41:20.722666Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     2
+# Query_time: 0.004298  Lock_time: 0.000290 Rows_sent: 5  Rows_examined: 40
+SET timestamp=1579063280;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC;
+# Time: 2020-01-15T04:41:20.727474Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     2
+# Query_time: 0.002336  Lock_time: 0.000137 Rows_sent: 1  Rows_examined: 15
+SET timestamp=1579063280;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T04:41:20.729903Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     2
+# Query_time: 0.002212  Lock_time: 0.000110 Rows_sent: 1  Rows_examined: 15
+SET timestamp=1579063280;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T04:41:21.642523Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     4
+# Query_time: 0.006299  Lock_time: 0.000118 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063281;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:21.646790Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     4
+# Query_time: 0.002427  Lock_time: 0.000092 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063281;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:21.759008Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     6
+# Query_time: 0.002029  Lock_time: 0.000146 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063281;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:21.763177Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     6
+# Query_time: 0.002831  Lock_time: 0.000066 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063281;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:21.796151Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     6
+# Query_time: 0.032544  Lock_time: 0.000166 Rows_sent: 5  Rows_examined: 40
+SET timestamp=1579063281;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC;
+# Time: 2020-01-15T04:41:21.806499Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     6
+# Query_time: 0.009811  Lock_time: 0.000137 Rows_sent: 1  Rows_examined: 15
+SET timestamp=1579063281;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T04:41:21.813679Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     6
+# Query_time: 0.006913  Lock_time: 0.000149 Rows_sent: 1  Rows_examined: 15
+SET timestamp=1579063281;
+SELECT COUNT(*) FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t;
+# Time: 2020-01-15T04:41:21.864275Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     8
+# Query_time: 0.003900  Lock_time: 0.000248 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063281;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:21.870410Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:     8
+# Query_time: 0.002895  Lock_time: 0.000074 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063281;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:21.991044Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    10
+# Query_time: 0.002782  Lock_time: 0.000079 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063281;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:21.996187Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    10
+# Query_time: 0.003443  Lock_time: 0.000094 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063281;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:22.041713Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    12
+# Query_time: 0.002632  Lock_time: 0.000097 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063282;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:22.047810Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    12
+# Query_time: 0.003034  Lock_time: 0.000130 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063282;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:24.138968Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    14
+# Query_time: 0.004066  Lock_time: 0.000104 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063284;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:24.142727Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    14
+# Query_time: 0.002969  Lock_time: 0.000170 Rows_sent: 1  Rows_examined: 13
+SET timestamp=1579063284;
+SELECT (COUNT(DB_first_level) DIV 100) * 100 from (  SELECT distinct SUBSTRING_INDEX(SCHEMA_NAME,  '_', 1)  DB_first_level  FROM INFORMATION_SCHEMA.SCHEMATA  WHERE `SCHEMA_NAME` < 'wordpress' ) t;
+# Time: 2020-01-15T04:41:24.149060Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    14
+# Query_time: 0.003004  Lock_time: 0.000103 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063284;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:24.241820Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    14
+# Query_time: 0.073095  Lock_time: 0.000165 Rows_sent: 12  Rows_examined: 24
+use wordpress;
+SET timestamp=1579063284;
+SELECT *,
+                `TABLE_SCHEMA`       AS `Db`,
+                `TABLE_NAME`         AS `Name`,
+                `TABLE_TYPE`         AS `TABLE_TYPE`,
+                `ENGINE`             AS `Engine`,
+                `ENGINE`             AS `Type`,
+                `VERSION`            AS `Version`,
+                `ROW_FORMAT`         AS `Row_format`,
+                `TABLE_ROWS`         AS `Rows`,
+                `AVG_ROW_LENGTH`     AS `Avg_row_length`,
+                `DATA_LENGTH`        AS `Data_length`,
+                `MAX_DATA_LENGTH`    AS `Max_data_length`,
+                `INDEX_LENGTH`       AS `Index_length`,
+                `DATA_FREE`          AS `Data_free`,
+                `AUTO_INCREMENT`     AS `Auto_increment`,
+                `CREATE_TIME`        AS `Create_time`,
+                `UPDATE_TIME`        AS `Update_time`,
+                `CHECK_TIME`         AS `Check_time`,
+                `TABLE_COLLATION`    AS `Collation`,
+                `CHECKSUM`           AS `Checksum`,
+                `CREATE_OPTIONS`     AS `Create_options`,
+                `TABLE_COMMENT`      AS `Comment`
+            FROM `information_schema`.`TABLES` t
+            WHERE `TABLE_SCHEMA` 
+                IN ('wordpress')
+                 ORDER BY Name ASC LIMIT 250 OFFSET 0;
+# Time: 2020-01-15T04:41:24.265589Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    14
+# Query_time: 0.001135  Lock_time: 0.000084 Rows_sent: 222  Rows_examined: 222
+SET timestamp=1579063284;
+SELECT `COLLATION_NAME` AS `Collation`, `CHARACTER_SET_NAME` AS `Charset`, `ID` AS `Id`, `IS_DEFAULT` AS `Default`, `IS_COMPILED` AS `Compiled`, `SORTLEN` AS `Sortlen` FROM `information_schema`.`COLLATIONS`;
+# Time: 2020-01-15T04:41:24.281071Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    14
+# Query_time: 0.000240  Lock_time: 0.000095 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1579063284;
+SELECT DEFAULT_COLLATION_NAME FROM information_schema.SCHEMATA WHERE SCHEMA_NAME = 'wordpress' LIMIT 1;
+# Time: 2020-01-15T04:41:24.356388Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    14
+# Query_time: 0.000330  Lock_time: 0.000102 Rows_sent: 1  Rows_examined: 58
+SET timestamp=1579063284;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''root''@''%''' AND PRIVILEGE_TYPE='EVENT';
+# Time: 2020-01-15T04:41:24.356836Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    14
+# Query_time: 0.000261  Lock_time: 0.000079 Rows_sent: 1  Rows_examined: 58
+SET timestamp=1579063284;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''root''@''%''' AND PRIVILEGE_TYPE='TRIGGER';
+# Time: 2020-01-15T04:41:24.360583Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    14
+# Query_time: 0.000292  Lock_time: 0.000114 Rows_sent: 1  Rows_examined: 58
+SET timestamp=1579063284;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''root''@''%''' AND PRIVILEGE_TYPE='EVENT';
+# Time: 2020-01-15T04:41:24.360937Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    14
+# Query_time: 0.000219  Lock_time: 0.000067 Rows_sent: 1  Rows_examined: 58
+SET timestamp=1579063284;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''root''@''%''' AND PRIVILEGE_TYPE='TRIGGER';
+# Time: 2020-01-15T04:41:24.509872Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    16
+# Query_time: 0.002671  Lock_time: 0.000114 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063284;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:24.545241Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    16
+# Query_time: 0.013957  Lock_time: 0.000291 Rows_sent: 5  Rows_examined: 5
+SET timestamp=1579063284;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`;
+# Time: 2020-01-15T04:41:24.572716Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    16
+# Query_time: 0.026366  Lock_time: 0.000257 Rows_sent: 5  Rows_examined: 40
+SET timestamp=1579063284;
+SELECT `SCHEMA_NAME` FROM `INFORMATION_SCHEMA`.`SCHEMATA`, (SELECT DB_first_level FROM ( SELECT DISTINCT SUBSTRING_INDEX(SCHEMA_NAME, '_', 1) DB_first_level FROM INFORMATION_SCHEMA.SCHEMATA WHERE TRUE ) t ORDER BY DB_first_level ASC LIMIT 0, 100) t2 WHERE TRUE AND 1 = LOCATE(CONCAT(DB_first_level, '_'), CONCAT(SCHEMA_NAME, '_')) ORDER BY SCHEMA_NAME ASC;
+# Time: 2020-01-15T04:41:24.579039Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    16
+# Query_time: 0.005686  Lock_time: 0.000175 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579063284;
+SELECT COUNT(*) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA`='wordpress' AND `TABLE_TYPE`IN('BASE TABLE', 'SYSTEM VERSIONED');
+# Time: 2020-01-15T04:41:24.598094Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    16
+# Query_time: 0.017309  Lock_time: 0.000200 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579063284;
+SELECT COUNT(*) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA`='wordpress' AND `TABLE_TYPE`NOT IN('BASE TABLE', 'SYSTEM VERSIONED');
+# Time: 2020-01-15T04:41:24.637299Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    16
+# Query_time: 0.031984  Lock_time: 0.019652 Rows_sent: 1  Rows_examined: 48
+SET timestamp=1579063284;
+SELECT COUNT(*) FROM `INFORMATION_SCHEMA`.`ROUTINES` WHERE `ROUTINE_SCHEMA` ='wordpress' AND `ROUTINE_TYPE`='FUNCTION';
+# Time: 2020-01-15T04:41:24.644818Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    16
+# Query_time: 0.007167  Lock_time: 0.000869 Rows_sent: 1  Rows_examined: 48
+SET timestamp=1579063284;
+SELECT COUNT(*) FROM `INFORMATION_SCHEMA`.`ROUTINES` WHERE `ROUTINE_SCHEMA` ='wordpress'AND `ROUTINE_TYPE`='PROCEDURE';
+# Time: 2020-01-15T04:41:24.645764Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    16
+# Query_time: 0.000632  Lock_time: 0.000347 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1579063284;
+SELECT COUNT(*) FROM `INFORMATION_SCHEMA`.`EVENTS` WHERE `EVENT_SCHEMA` ='wordpress';
+# Time: 2020-01-15T04:41:24.658385Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    16
+# Query_time: 0.012250  Lock_time: 0.000179 Rows_sent: 12  Rows_examined: 24
+SET timestamp=1579063284;
+SELECT `TABLE_NAME` AS `name` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA`='wordpress' AND `TABLE_TYPE`IN('BASE TABLE', 'SYSTEM VERSIONED') ORDER BY `TABLE_NAME` ASC LIMIT 0, 50;
+# Time: 2020-01-15T04:41:24.672373Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    16
+# Query_time: 0.008722  Lock_time: 0.000167 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579063284;
+SELECT COUNT(*) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA`='wordpress' AND `TABLE_TYPE`IN('BASE TABLE', 'SYSTEM VERSIONED');
+# Time: 2020-01-15T04:41:24.676012Z
+# User@Host: root[root] @ docker_phpmyadmin_1.backend [172.23.0.2]  Id:    16
+# Query_time: 0.003285  Lock_time: 0.000180 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1579063284;
+SELECT COUNT(*) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA`='wordpress' AND `TABLE_TYPE`IN('BASE TABLE', 'SYSTEM VERSIONED');

@@ -38,7 +38,7 @@ case ${1} in
               docker-compose up -d
           ;;
           stop)
-              docker-compose stop
+              docker-compose down
           ;;
           *)
               usage
