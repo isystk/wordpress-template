@@ -83,7 +83,7 @@ case ${1} in
               docker-compose stop mysql && docker-compose rm -fv mysql
           ;;
           login)
-              mysql -u root -ppassword -h 127.0.0.1  
+              mysql -u root -ppassword -h 127.0.0.1
           ;;
           *)
               usage

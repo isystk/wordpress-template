@@ -24,6 +24,7 @@ services:
       dockerfile: "Dockerfile"
     restart: always
     volumes:
+     - ./php/logs:/var/log/php
      - ../public:/var/www/html
 
   mysql:
