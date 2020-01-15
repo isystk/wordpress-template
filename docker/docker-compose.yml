@@ -46,9 +46,6 @@ services:
      - ./mysql/conf.d:/etc/mysql/conf.d
      - ./mysql/data:/var/lib/mysql
      - ./mysql/logs:/var/log/mysql
-  #        #DBの実体をおいておく
-  #   - ./mysql/init:/docker-entrypoint-initdb.d
-  #        #MySQL初回起動時の走らせたいsqlとかshとかを渡すため
     networks:
      - backend
 

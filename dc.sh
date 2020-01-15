@@ -34,6 +34,13 @@ case ${1} in
 
     all)
       case ${2} in
+          init)
+              # 停止＆削除（コンテナ・ネットワーク・イメージ）
+              docker-compose down --rmi all
+              rm -Rf ./mysql/data/*
+              rm -Rf ./mysql/logs/*
+              rm -Rf ./apache/logs/*
+              rm -Rf ./php/logs/*
           start)
               docker-compose up -d
           ;;
