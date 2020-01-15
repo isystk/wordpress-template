@@ -16,10 +16,8 @@ Options:
   stats|st          Dockerコンテナの状態を表示します。
   apache start      Apacheを起動します。
   apache stop       Apacheを停止します。
-  apache restart    Apacheを再起動します。
   mysql start       MySQLを起動します。
   mysql stop        MySQLを停止します。
-  mysql restart     MySQLを再起動します。
   --version, -v     バージョンを表示します。
   --help, -h        ヘルプを表示します。
 EOF
@@ -34,16 +32,13 @@ case ${1} in
         docker container stats
     ;;
 
-    nginx)
+    all)
       case ${2} in
           start)
-              docker-compose up -d nginx
+              docker-compose up -d
           ;;
           stop)
-              docker-compose stop nginx && docker-compose rm -fv nginx
-          ;;
-          restart)
-              ${0} ${1} stop && ${0} ${1} start
+              docker-compose stop
           ;;
           *)
               usage
@@ -59,8 +54,19 @@ case ${1} in
           stop)
               docker-compose stop apache && docker-compose rm -fv apache
           ;;
-          restart)
-              ${0} ${1} stop && ${0} ${1} start
+          *)
+              usage
+          ;;
+      esac
+    ;;
+
+    php)
+      case ${2} in
+          start)
+              docker-compose up -d php
+          ;;
+          stop)
+              docker-compose stop php && docker-compose rm -fv php
           ;;
           *)
               usage
@@ -76,11 +82,22 @@ case ${1} in
           stop)
               docker-compose stop mysql && docker-compose rm -fv mysql
           ;;
-          restart)
-              ${0} ${1} stop && ${0} ${1} start
-          ;;
           login)
               mysql -u root -ppassword -h 127.0.0.1  
+          ;;
+          *)
+              usage
+          ;;
+      esac
+    ;;
+
+    phpmyadmin)
+      case ${2} in
+          start)
+              docker-compose up -d phpmyadmin
+          ;;
+          stop)
+              docker-compose stop php && docker-compose rm -fv phpmyadmin
           ;;
           *)
               usage
