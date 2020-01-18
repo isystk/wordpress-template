@@ -35,13 +35,14 @@ case ${1} in
     all)
       case ${2} in
           init)
-              # 停止＆削除（コンテナ・ネットワーク・イメージ）
-              docker-compose down --rmi all
+              # 停止＆削除（コンテナ・イメージ・ボリューム）
+              docker-compose down --rmi all --volumes
               rm -Rf ./mysql/data/*
               rm -Rf ./mysql/logs/*
               rm -Rf ./apache/logs/*
               rm -Rf ./php/logs/*
-              rm -Rf ../public/wp-config.php
+              docker network create frontend
+              docker network create backend
           ;;
           start)
               docker-compose up -d
