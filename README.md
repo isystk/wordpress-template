@@ -18,12 +18,12 @@ Wordpress の自作テンプレートを開発する環境を構築します。
 │   │   ├── logs （mysqlのログ）
 │   │   └── script （mysql関連のスクリプト）
 │   └── php （PHP-FRM）
-│   │   └── logs （ｐｈｐのログ）
+│   │   └── logs （phpのログ）
 │   └── phpmyadmin （DB管理ツール）
 │
 ├── public （公開ディレクトリ）
-├── ｄｃ．ｓｈ （Dockerの起動用スクリプト）
-└── ｓｒｃ （自作テンプレート）
+├── dc.sh （Dockerの起動用スクリプト）
+└── src （自作テンプレート）
 ```
 
 ## Description

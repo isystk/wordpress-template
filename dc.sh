@@ -14,10 +14,10 @@ Usage:
 
 Options:
   stats|st          Dockerコンテナの状態を表示します。
-  apache start      Apacheを起動します。
-  apache stop       Apacheを停止します。
-  mysql start       MySQLを起動します。
-  mysql stop        MySQLを停止します。
+  init              初期化します。（データベース・ログ）
+  start             すべてのDaemonを起動します。
+  stop              すべてのDaemonを停止します。
+  mysql login       MySQLにログインします。
   --version, -v     バージョンを表示します。
   --help, -h        ヘルプを表示します。
 EOF
@@ -32,89 +32,36 @@ case ${1} in
         docker container stats
     ;;
 
-    all)
-      case ${2} in
-          init)
-              # 停止＆削除（コンテナ・イメージ・ボリューム）
-              docker-compose down --rmi all --volumes
-              rm -Rf ./mysql/data/*
-              rm -Rf ./mysql/logs/*
-              rm -Rf ./apache/logs/*
-              rm -Rf ./php/logs/*
-              docker network create frontend
-              docker network create backend
-          ;;
-          start)
-              docker-compose up -d
-          ;;
-          stop)
-              docker-compose down
-          ;;
-          *)
-              usage
-          ;;
-      esac
+    init)
+        # 停止＆削除（コンテナ・イメージ・ボリューム）
+        docker-compose down --rmi all --volumes
+        rm -Rf ./mysql/data/*
+        rm -Rf ./mysql/logs/*
+        rm -Rf ./apache/logs/*
+        rm -Rf ./php/logs/*
+        docker network create frontend
+        docker network create backend
     ;;
 
-    apache)
-      case ${2} in
-          start)
-              docker-compose up -d apache
-          ;;
-          stop)
-              docker-compose stop apache && docker-compose rm -fv apache
-          ;;
-          *)
-              usage
-          ;;
-      esac
+    start)
+        docker-compose up -d
     ;;
-
-    php)
-      case ${2} in
-          start)
-              docker-compose up -d php
-          ;;
-          stop)
-              docker-compose stop php && docker-compose rm -fv php
-          ;;
-          *)
-              usage
-          ;;
-      esac
+    
+    stop)
+        docker-compose down
     ;;
 
     mysql)
       case ${2} in
-          start)
-              docker-compose up -d mysql
-          ;;
-          stop)
-              docker-compose stop mysql && docker-compose rm -fv mysql
-          ;;
           login)
-              mysql -u root -ppassword -h 127.0.0.1
+              mysql -u root -ppassword -h 127.0.0.1  
           ;;
           *)
               usage
           ;;
       esac
     ;;
-
-    phpmyadmin)
-      case ${2} in
-          start)
-              docker-compose up -d phpmyadmin
-          ;;
-          stop)
-              docker-compose stop php && docker-compose rm -fv phpmyadmin
-          ;;
-          *)
-              usage
-          ;;
-      esac
-    ;;
-
+    
     help|--help|-h)
         usage
     ;;
