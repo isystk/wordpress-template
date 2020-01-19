@@ -16,6 +16,7 @@ services:
      - ./apache/ssl:/etc/apache2/ssl
      - ./apache/logs:/var/log/apache2
      - ../public:/var/www/html
+     - ../src:/var/www/html/wp-content/themes/mytheme
     networks:
      - frontend
      - backend
@@ -29,6 +30,7 @@ services:
     volumes:
      - ./php/logs:/var/log/php
      - ../public:/var/www/html
+     - ../src:/var/www/html/wp-content/themes/mytheme
     networks:
      - backend
 
