@@ -834,3 +834,127 @@ SELECT COUNT(*) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA`='wordpre
 # Query_time: 0.003285  Lock_time: 0.000180 Rows_sent: 1  Rows_examined: 12
 SET timestamp=1579063284;
 SELECT COUNT(*) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA`='wordpress' AND `TABLE_TYPE`IN('BASE TABLE', 'SYSTEM VERSIONED');
+mysqld, Version: 5.7.28-log (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2020-01-29T03:36:32.615180Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:     2
+# Query_time: 0.014336  Lock_time: 0.012694 Rows_sent: 1  Rows_examined: 4
+use wordpress;
+SET timestamp=1580268992;
+SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (1) ORDER BY t.name ASC;
+# Time: 2020-01-29T03:36:33.383312Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:     2
+# Query_time: 0.000449  Lock_time: 0.000122 Rows_sent: 1  Rows_examined: 3
+SET timestamp=1580268993;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') AND tt.count > 0 ORDER BY t.name ASC;
+# Time: 2020-01-29T03:53:47.346968Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    11
+# Query_time: 0.000428  Lock_time: 0.000195 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1580270027;
+SELECT  COUNT(*) FROM wp_comments  WHERE ( ( comment_approved = '0' OR comment_approved = '1' ) ) AND user_id = 1  ORDER BY wp_comments.comment_date_gmt DESC;
+# Time: 2020-01-29T03:53:51.448873Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    14
+# Query_time: 0.002544  Lock_time: 0.001908 Rows_sent: 111  Rows_examined: 133
+SET timestamp=1580270031;
+SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes';
+# Time: 2020-01-29T03:53:54.029547Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    14
+# Query_time: 0.000670  Lock_time: 0.000182 Rows_sent: 0  Rows_examined: 4
+SET timestamp=1580270034;
+SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND wp_posts.post_name IN ('%e7%8f%be%e4%bb%a3%e7%be%8e%e8%a1%93%e9%a4%a8%e3%81%8c%e6%96%b0%e8%a3%85%e3%82%aa%e3%83%bc%e3%83%97%e3%83%b3','%e7%8f%be%e4%bb%a3%e7%be%8e%e8%a1%93%e9%a4%a8%e3%81%8c%e6%96%b0%e8%a3%85%e3%82%aa%e3%83%bc%e3%83%97%e3%83%b3','%e4%bc%9a%e7%a4%be%e6%a6%82%e8%a6%81','%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b','%e3%83%96%e3%83%ad%e3%82%b0') AND wp_posts.post_type IN ('post', 'page', 'attachment') AND ((wp_posts.post_status = 'publish' OR wp_posts.post_status = 'future' OR wp_posts.post_status = 'draft' OR wp_posts.post_status = 'pending' OR wp_posts.post_status = 'trash' OR wp_posts.post_status = 'inherit' OR wp_posts.post_status = 'request-pending' OR wp_posts.post_status = 'request-confirmed' OR wp_posts.post_status = 'request-failed' OR wp_posts.post_status = 'request-completed' OR wp_posts.post_status = 'private'))  ORDER BY wp_posts.post_date DESC;
+# Time: 2020-01-29T03:53:54.302364Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    14
+# Query_time: 0.004979  Lock_time: 0.004645 Rows_sent: 0  Rows_examined: 2
+SET timestamp=1580270034;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('nav_menu') ORDER BY t.name ASC;
+# Time: 2020-01-29T03:53:58.277452Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    15
+# Query_time: 0.004890  Lock_time: 0.003777 Rows_sent: 111  Rows_examined: 141
+SET timestamp=1580270038;
+SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes';
+# Time: 2020-01-29T03:53:59.450714Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    15
+# Query_time: 0.006377  Lock_time: 0.006010 Rows_sent: 0  Rows_examined: 3
+SET timestamp=1580270039;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('category') AND tr.object_id IN (6) ORDER BY t.name ASC;
+# Time: 2020-01-29T03:54:19.823978Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    18
+# Query_time: 0.000465  Lock_time: 0.000131 Rows_sent: 1  Rows_examined: 3
+SET timestamp=1580270059;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') ORDER BY t.name ASC;
+# Time: 2020-01-29T03:54:19.839897Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    18
+# Query_time: 0.000811  Lock_time: 0.000213 Rows_sent: 0  Rows_examined: 2
+SET timestamp=1580270059;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('post_tag') AND tr.object_id IN (6) ORDER BY t.name ASC;
+# Time: 2020-01-29T03:54:41.875122Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    20
+# Query_time: 0.000577  Lock_time: 0.000127 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1580270081;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tr.object_id IN (15) ORDER BY t.name ASC;
+# Time: 2020-01-29T03:54:41.876782Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    20
+# Query_time: 0.000379  Lock_time: 0.000110 Rows_sent: 0  Rows_examined: 3
+SET timestamp=1580270081;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tr.object_id IN (15);
+# Time: 2020-01-29T03:54:41.938107Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    20
+# Query_time: 0.000509  Lock_time: 0.000122 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1580270081;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tr.object_id IN (16) ORDER BY t.name ASC;
+# Time: 2020-01-29T03:54:41.939599Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    20
+# Query_time: 0.000385  Lock_time: 0.000117 Rows_sent: 0  Rows_examined: 3
+SET timestamp=1580270081;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tr.object_id IN (16);
+# Time: 2020-01-29T03:54:42.004663Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    20
+# Query_time: 0.000467  Lock_time: 0.000131 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1580270082;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tr.object_id IN (17) ORDER BY t.name ASC;
+# Time: 2020-01-29T03:54:42.006248Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    20
+# Query_time: 0.000458  Lock_time: 0.000152 Rows_sent: 0  Rows_examined: 3
+SET timestamp=1580270082;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tr.object_id IN (17);
+# Time: 2020-01-29T03:54:42.065133Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    20
+# Query_time: 0.000702  Lock_time: 0.000122 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1580270082;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tr.object_id IN (18) ORDER BY t.name ASC;
+# Time: 2020-01-29T03:54:42.067067Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    20
+# Query_time: 0.000420  Lock_time: 0.000130 Rows_sent: 0  Rows_examined: 3
+SET timestamp=1580270082;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tr.object_id IN (18);
+# Time: 2020-01-29T03:54:46.606781Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    21
+# Query_time: 0.006620  Lock_time: 0.005922 Rows_sent: 3  Rows_examined: 14
+SET timestamp=1580270086;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('nav_menu') ORDER BY t.name ASC;
+# Time: 2020-01-29T03:54:46.617894Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    21
+# Query_time: 0.000768  Lock_time: 0.000197 Rows_sent: 5  Rows_examined: 32
+SET timestamp=1580270086;
+SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tr.object_id IN (23, 24, 25, 26, 27) ORDER BY t.name ASC;
+# Time: 2020-01-29T03:54:46.628119Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    21
+# Query_time: 0.001027  Lock_time: 0.000220 Rows_sent: 4  Rows_examined: 29
+SET timestamp=1580270086;
+SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tr.object_id IN (15, 16, 17, 18) ORDER BY t.name ASC;
+# Time: 2020-01-29T03:54:46.639192Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:    21
+# Query_time: 0.000984  Lock_time: 0.000185 Rows_sent: 4  Rows_examined: 29
+SET timestamp=1580270086;
+SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tr.object_id IN (19, 20, 21, 22) ORDER BY t.name ASC;
+# Time: 2020-01-29T05:20:19.491117Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:   186
+# Query_time: 0.001546  Lock_time: 0.000241 Rows_sent: 3  Rows_examined: 14
+SET timestamp=1580275219;
+SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('nav_menu') ORDER BY t.name ASC;
+# Time: 2020-01-29T05:35:00.427055Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.4]  Id:   255
+# Query_time: 0.001363  Lock_time: 0.000234 Rows_sent: 4  Rows_examined: 34
+SET timestamp=1580276100;
+SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (30, 39, 44, 47) ORDER BY t.name ASC;

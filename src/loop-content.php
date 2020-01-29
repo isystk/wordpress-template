@@ -1,11 +1,20 @@
-<article <?php post_class( 'article-list' ); ?>>
-  <a href="<?php the_permalink(); ?>">
-    <div class="img-wrap">
+<article <?php post_class( 'post' ); ?>>
+  <header class="entry-header">
+    <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <div class="entry-meta">
+      <span>
+        <a href="#"><time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php echo get_the_date(); ?></time></a>
+      </span>
+      <span> / </span>
+      <span>
+        <a href="#"><i class="fas fa-user"></i><?php the_author(); ?></a>
+      </span>
+    </div>
     <!--画像を追加-->
     <?php if( has_post_thumbnail() ): ?>
-      <?php the_post_thumbnail('medium'); ?>
-    <?php else: ?>
-      <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.gif" alt="no-img"/>
+      <div class="post-thumbnail">
+        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+      </div>
     <?php endif; ?>
     <!--カテゴリ-->
     <?php if (!is_category() && has_category()): ?>
@@ -16,24 +25,8 @@
       ?>
       </span>
     <?php endif; ?>
-    </div><!--end img-warp-->
-    <div class="text">
-      <!--タイトル-->
-      <h2><?php the_title(); ?></h2>
-
-      <!--投稿日を表示-->
-      <span class="article-date">
-        <i class="far fa-clock"></i>
-        <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>">
-          <?php echo get_the_date(); ?>
-        </time>
-      </span>
-      <!--著者を表示-->
-      <span class="article-author">
-        <i class="fas fa-user"></i><?php the_author(); ?>
-      </span>
-      <!--抜粋-->
-      <?php the_excerpt(); ?>
-    </div><!--end text-->
-  </a>
+  </header>
+  <div class="entry-content">
+    <?php the_excerpt(); ?>
+  </div>
 </article>
