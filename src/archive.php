@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<div class="container">
-  <div class="contents">
+<div class="content">
+  <main>
     <div class="archive-top">
       <?php
       if(is_category()):
@@ -45,7 +45,7 @@
     </div>
 
 
-  </div><!--end contents-->
+    </main><!--end contents-->
   <?php get_sidebar(); ?>
 </div><!--end container-->
 <?php get_footer(); ?>

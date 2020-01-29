@@ -11,13 +11,13 @@ Wordpress の自作テンプレートを開発する環境を構築します。
 │   ├── apache （Webサーバー）
 │   │   ├── conf.d (apacheの設定ファイル)
 │   │   └── logs （apacheのログ）
-│   └── mysql （DBサーバー）
+│   ├── mysql （DBサーバー）
 │   │   ├── conf.d (mysqlの設定ファイル)
 │   │   ├── data (mysqlのデータファイル)
 │   │   ├── init （mysqlの初期DDL）
 │   │   ├── logs （mysqlのログ）
 │   │   └── script （mysql関連のスクリプト）
-│   └── php （PHP-FRM）
+│   ├── php （PHP-FRM）
 │   │   └── logs （phpのログ）
 │   └── phpmyadmin （DB管理ツール）
 │
@@ -38,10 +38,10 @@ Wordpress の自作テンプレートを開発する環境を構築します。
 
 ```
 # サーバーを起動する
-$ ./dc.sh all start
+$ ./dc.sh start
 
 # サーバーを停止する
-$ ./dc.sh all stop
+$ ./dc.sh stop
 ```
 
 ### データベースを参照する

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<div class="container">
-  <div class="contents">
+<div class="content">
+  <main>
     <?php if(have_posts()): the_post(); ?>
     <article <?php post_class( 'article-content' ); ?>>
       <!--タイトル-->
@@ -14,7 +14,7 @@
       </div>
     </article>
     <?php endif; ?>
-  </div><!--end contents-->
+  </main><!--end contents-->
   <?php get_sidebar(); ?>
 </div><!--end container-->
 <?php get_footer(); ?>
