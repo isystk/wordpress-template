@@ -1,5 +1,5 @@
 
-    <footer>
+    <footer class="footer">
       <section class="footer1">
         <div class="menu-social-container">
           <ul class="menu">

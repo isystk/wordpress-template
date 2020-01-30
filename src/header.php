@@ -143,7 +143,8 @@ if(!empty($title)) {
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>"><!--スタイルシートの呼び出し-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/normalize.css">
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/prettify.css">
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/style.css">
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/common.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" size="256x256" href="<?php echo get_template_directory_uri(); ?>/images/android-chrome.png">
@@ -152,6 +153,9 @@ if(!empty($title)) {
 <?php wp_head(); ?><!--システム・プラグイン用-->
 </head>
 <body <?php body_class('column2 side-right'); ?>>
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   <div class="wrap">
     <header class="header">
       <div class="logo">Sample site</div>
