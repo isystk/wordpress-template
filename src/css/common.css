@@ -1,56 +1,79 @@
 @charset "UTF-8";
 
-
 /*--------------------------------------------------------------------
 
   1 汎用設定
 
 --------------------------------------------------------------------*/
 
-body{
-  margin:0;
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
   font-size:16px;
-  line-height:1.6;
   color:#383838;
   font-family:Roboto,游ゴシック体,YuGothic,游ゴシック Medium,Yu Gothic Medium,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,Verdana,メイリオ,Meiryo,Osaka,ＭＳ Ｐゴシック,MS PGothic,Font Awesome\\ 5 Free,Font Awesome\\ 5 Brands,sans-serif;
   overflow-wrap:break-word;
   word-break: break-all;
-  background: #383838;
+	background:#333;
 }
-
+html {
+	overflow-y:scroll;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin: 0 0 10px 0;
+}
+p,li,dt,dl {
+	line-height:1.6;
+}
+p {
+	margin:0 0 1em 0;
+}
+li {
+	list-style-type:none;
+}
+img {
+	border:0;
+}
+address {
+	font-style:normal;
+}
+.clear {
+	clear:both;
+}
 
 /* リンク
 ------------------------------------- */
-a {
-  text-decoration:underline;
-  color: inherit;
+a:link {
+	color:#000;
+	text-decoration:none;
 }
-
-a:hover,
-a:focus {
+a:visited {
+	color:#000;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
   opacity: 0.8;
   transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out, opacity .2s ease-in-out;
 }
-
-a img:hover,
-a img:focus {
-  opacity: 0.8;
-  text-decoration:none;
-  transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out, opacity .2s ease-in-out;
+a:active {
+	color:#666;
 }
-
-.link  a {
-  text-decoration:none;
-}
-.link:hover,
-.link:focus {
+a img:hover {
   opacity: 0.8;
   text-decoration:none;
   transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out, opacity .2s ease-in-out;
 }
-
-.no-underline a {
+.link a {
   text-decoration:none;
+}
+.link:hover {
+  opacity: 0.8;
+  text-decoration:none;
+  transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out, opacity .2s ease-in-out;
 }
 
 /* 画像
@@ -277,6 +300,10 @@ body.column2.side-right aside.side-left{
   display: block;
   float: right;
   zoom: 1.8;
+  padding-top: 3px;
+}
+.header #menu-btn a {
+  color: #fff;
 }
 #menu {
   position: fixed;
@@ -343,11 +370,11 @@ body.column2.side-right aside.side-left{
 #page-top a {
 	background: #666;
 	color: #fff;
-	width: 55px;
+	width: 50px;
 	padding: 15px 0;
 	text-align: center;
 	display: block;
-	border-radius: 28px;
+	border-radius: 25px;
 }
 #page-top.hide {
   bottom: -100px;
@@ -454,9 +481,6 @@ article.detail .entry-header {
 article.detail .entry-header a {
   text-decoration:none;
 }
-article.detail .entry-title {
-  margin: 0;
-}
 article.detail .entry-header .entry-meta a{
   color: #999;
   font-size: 93.8%;
@@ -506,7 +530,8 @@ article.detail .entry-content .caption-text {
 }
 
 /* コメント */ 
-.entry-comments {
+.entry-comments h3 {
+  font-size: 14px;
 }
 .entry-comments ol {
   list-style: none;
@@ -518,7 +543,8 @@ article.detail .entry-content .caption-text {
 .entry-comments ol li.even{
   border-bottom: 1px solid #000;
 }
-.entry-comments ol .comment {
+.entry-comments textarea {
+  width: 100%;
 }
 .entry-comments ol .children {
   margin-left: 10%;
@@ -593,13 +619,8 @@ article.detail .entry-content .caption-text {
 .entry-comments .comment-respond .comment-form-comment label {
   display: block;
 }
-.entry-comments .comment-respond .comment-form-author,
-.entry-comments .comment-respond .comment-form-email {
-  float: left;
-  width: calc(50% - 1rem);
-}
-.entry-comments .comment-respond .comment-form-email {
-  margin-left: 2rem;
+.entry-comments .comment-respond .required {
+  color: red;
 }
 .entry-comments .comment-respond .comment-form-cookies-consent {
   font-size: 12px;
