@@ -56,6 +56,9 @@ case ${1} in
           login)
               mysql -u root -ppassword -h 127.0.0.1  
           ;;
+          dump)
+              mysqldump -u root -ppassword -h 127.0.0.1 -A > ./mysql/init/dump.sql
+          ;;
           *)
               usage
           ;;

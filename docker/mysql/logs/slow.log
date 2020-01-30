@@ -1624,3 +1624,317 @@ SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy 
 # Query_time: 0.001131  Lock_time: 0.000201 Rows_sent: 6  Rows_examined: 40
 SET timestamp=1580358504;
 SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (47, 54, 60) ORDER BY t.name ASC;
+# Time: 2020-01-30T05:36:47.653272Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000710  Lock_time: 0.000219 Rows_sent: 0  Rows_examined: 34
+SET timestamp=1580362607;
+SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME;
+# Time: 2020-01-30T05:36:47.655758Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000758  Lock_time: 0.000179 Rows_sent: 0  Rows_examined: 34
+SET timestamp=1580362607;
+SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME;
+# Time: 2020-01-30T05:36:48.217248Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000962  Lock_time: 0.000000 Rows_sent: 2  Rows_examined: 2
+use mysql;
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `db`;
+# Time: 2020-01-30T05:36:48.237159Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000247  Lock_time: 0.000000 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `engine_cost`;
+# Time: 2020-01-30T05:36:48.319914Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000333  Lock_time: 0.000000 Rows_sent: 43  Rows_examined: 43
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `help_category`;
+# Time: 2020-01-30T05:36:48.435084Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.044612  Lock_time: 0.000000 Rows_sent: 661  Rows_examined: 661
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `help_topic`;
+# Time: 2020-01-30T05:36:48.463131Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000862  Lock_time: 0.000000 Rows_sent: 158  Rows_examined: 158
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `innodb_index_stats`;
+# Time: 2020-01-30T05:36:48.482854Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000265  Lock_time: 0.000000 Rows_sent: 14  Rows_examined: 14
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `innodb_table_stats`;
+# Time: 2020-01-30T05:36:48.520576Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000280  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `plugin`;
+# Time: 2020-01-30T05:36:48.602516Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000300  Lock_time: 0.000000 Rows_sent: 6  Rows_examined: 6
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `server_cost`;
+# Time: 2020-01-30T05:36:48.620823Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000210  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `servers`;
+# Time: 2020-01-30T05:36:48.675318Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000245  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `slave_worker_info`;
+# Time: 2020-01-30T05:36:48.697110Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000898  Lock_time: 0.000000 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `tables_priv`;
+# Time: 2020-01-30T05:36:48.718323Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.001535  Lock_time: 0.000000 Rows_sent: 1823  Rows_examined: 1823
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `time_zone`;
+# Time: 2020-01-30T05:36:48.739195Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000214  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `time_zone_leap_second`;
+# Time: 2020-01-30T05:36:48.766213Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.005915  Lock_time: 0.000000 Rows_sent: 1823  Rows_examined: 1823
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `time_zone_name`;
+# Time: 2020-01-30T05:36:48.998889Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.211152  Lock_time: 0.000000 Rows_sent: 124154  Rows_examined: 124154
+SET timestamp=1580362608;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `time_zone_transition`;
+# Time: 2020-01-30T05:36:49.040013Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.021875  Lock_time: 0.000000 Rows_sent: 9738  Rows_examined: 9738
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `time_zone_transition_type`;
+# Time: 2020-01-30T05:36:49.061041Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000893  Lock_time: 0.000000 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `user`;
+# Time: 2020-01-30T05:36:49.156748Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000322  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+use wordpress;
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_commentmeta`;
+# Time: 2020-01-30T05:36:49.178287Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000264  Lock_time: 0.000000 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_comments`;
+# Time: 2020-01-30T05:36:49.200653Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000330  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_links`;
+# Time: 2020-01-30T05:36:49.225928Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.004414  Lock_time: 0.000000 Rows_sent: 150  Rows_examined: 150
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_options`;
+# Time: 2020-01-30T05:36:49.250160Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000587  Lock_time: 0.000000 Rows_sent: 165  Rows_examined: 165
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_postmeta`;
+# Time: 2020-01-30T05:36:49.276859Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.004302  Lock_time: 0.000000 Rows_sent: 65  Rows_examined: 65
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_posts`;
+# Time: 2020-01-30T05:36:49.299980Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000246  Lock_time: 0.000000 Rows_sent: 27  Rows_examined: 27
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_term_relationships`;
+# Time: 2020-01-30T05:36:49.320641Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000384  Lock_time: 0.000000 Rows_sent: 8  Rows_examined: 8
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_term_taxonomy`;
+# Time: 2020-01-30T05:36:49.340727Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000266  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_termmeta`;
+# Time: 2020-01-30T05:36:49.361122Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000237  Lock_time: 0.000000 Rows_sent: 8  Rows_examined: 8
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_terms`;
+# Time: 2020-01-30T05:36:49.384696Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000287  Lock_time: 0.000000 Rows_sent: 20  Rows_examined: 20
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_usermeta`;
+# Time: 2020-01-30T05:36:49.408323Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   434
+# Query_time: 0.000231  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1580362609;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_users`;
+# Time: 2020-01-30T05:38:17.737992Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000533  Lock_time: 0.000148 Rows_sent: 0  Rows_examined: 34
+SET timestamp=1580362697;
+SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME;
+# Time: 2020-01-30T05:38:17.741057Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.001612  Lock_time: 0.000304 Rows_sent: 0  Rows_examined: 34
+SET timestamp=1580362697;
+SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME;
+# Time: 2020-01-30T05:38:17.832448Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000294  Lock_time: 0.000000 Rows_sent: 2  Rows_examined: 2
+use mysql;
+SET timestamp=1580362697;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `db`;
+# Time: 2020-01-30T05:38:17.854179Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000245  Lock_time: 0.000000 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1580362697;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `engine_cost`;
+# Time: 2020-01-30T05:38:17.935773Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000372  Lock_time: 0.000000 Rows_sent: 43  Rows_examined: 43
+SET timestamp=1580362697;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `help_category`;
+# Time: 2020-01-30T05:38:18.030633Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.033597  Lock_time: 0.000000 Rows_sent: 661  Rows_examined: 661
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `help_topic`;
+# Time: 2020-01-30T05:38:18.058544Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000645  Lock_time: 0.000000 Rows_sent: 158  Rows_examined: 158
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `innodb_index_stats`;
+# Time: 2020-01-30T05:38:18.077963Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000314  Lock_time: 0.000000 Rows_sent: 14  Rows_examined: 14
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `innodb_table_stats`;
+# Time: 2020-01-30T05:38:18.115535Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000206  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `plugin`;
+# Time: 2020-01-30T05:38:18.192238Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000245  Lock_time: 0.000000 Rows_sent: 6  Rows_examined: 6
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `server_cost`;
+# Time: 2020-01-30T05:38:18.210965Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000205  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `servers`;
+# Time: 2020-01-30T05:38:18.263587Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000241  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `slave_worker_info`;
+# Time: 2020-01-30T05:38:18.283660Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000758  Lock_time: 0.000000 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `tables_priv`;
+# Time: 2020-01-30T05:38:18.304437Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.001532  Lock_time: 0.000000 Rows_sent: 1823  Rows_examined: 1823
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `time_zone`;
+# Time: 2020-01-30T05:38:18.325659Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000214  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `time_zone_leap_second`;
+# Time: 2020-01-30T05:38:18.346803Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.003013  Lock_time: 0.000000 Rows_sent: 1823  Rows_examined: 1823
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `time_zone_name`;
+# Time: 2020-01-30T05:38:18.578599Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.212734  Lock_time: 0.000000 Rows_sent: 124154  Rows_examined: 124154
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `time_zone_transition`;
+# Time: 2020-01-30T05:38:18.616826Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.019244  Lock_time: 0.000000 Rows_sent: 9738  Rows_examined: 9738
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `time_zone_transition_type`;
+# Time: 2020-01-30T05:38:18.637695Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000344  Lock_time: 0.000000 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `user`;
+# Time: 2020-01-30T05:38:18.694395Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000200  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+use wordpress;
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_commentmeta`;
+# Time: 2020-01-30T05:38:18.712743Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000270  Lock_time: 0.000000 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_comments`;
+# Time: 2020-01-30T05:38:18.731047Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000216  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_links`;
+# Time: 2020-01-30T05:38:18.754820Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.004826  Lock_time: 0.000000 Rows_sent: 150  Rows_examined: 150
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_options`;
+# Time: 2020-01-30T05:38:18.776099Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000552  Lock_time: 0.000000 Rows_sent: 165  Rows_examined: 165
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_postmeta`;
+# Time: 2020-01-30T05:38:18.798255Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.003334  Lock_time: 0.000000 Rows_sent: 65  Rows_examined: 65
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_posts`;
+# Time: 2020-01-30T05:38:18.818362Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000260  Lock_time: 0.000000 Rows_sent: 27  Rows_examined: 27
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_term_relationships`;
+# Time: 2020-01-30T05:38:18.838441Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000238  Lock_time: 0.000000 Rows_sent: 8  Rows_examined: 8
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_term_taxonomy`;
+# Time: 2020-01-30T05:38:18.858909Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000230  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_termmeta`;
+# Time: 2020-01-30T05:38:18.877809Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000221  Lock_time: 0.000000 Rows_sent: 8  Rows_examined: 8
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_terms`;
+# Time: 2020-01-30T05:38:18.895810Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000294  Lock_time: 0.000000 Rows_sent: 20  Rows_examined: 20
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_usermeta`;
+# Time: 2020-01-30T05:38:18.914454Z
+# User@Host: root[root] @  [172.23.0.1]  Id:   435
+# Query_time: 0.000222  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1580362698;
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_users`;
