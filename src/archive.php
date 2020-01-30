@@ -1,3 +1,4 @@
+<!--カテゴリー一覧画面に表示するコンテンツ-->
 <?php get_header(); ?>
 <div class="content">
   <main>
@@ -43,7 +44,6 @@
       'next_text' => '<i class="fas fa-angle-right"></i>'
       ) ); ?>
     </div>
-
 
     </main><!--end contents-->
   <?php get_sidebar(); ?>

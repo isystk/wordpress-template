@@ -1,5 +1,6 @@
-<article <?php post_class( 'post' ); ?>>
-  <header class="entry-header">
+<!--一覧画面に表示される投稿内容部分のパーツ -->
+<article <?php post_class( 'top' ); ?>>
+  <div class="entry-header">
     <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
     <div class="entry-meta">
       <span>
@@ -25,8 +26,8 @@
       ?>
       </span>
     <?php endif; ?>
-  </header>
+  </div>
   <div class="entry-content">
-    <?php the_excerpt(); ?>
+    <a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a>
   </div>
 </article>

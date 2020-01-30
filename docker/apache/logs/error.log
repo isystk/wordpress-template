@@ -236,3 +236,10 @@ AH00558: httpd: Could not reliably determine the server's fully qualified domain
 [Wed Jan 29 12:36:10.864492 2020] [ssl:warn] [pid 1] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
 [Wed Jan 29 12:36:10.888545 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.41 (Unix) OpenSSL/1.1.1d configured -- resuming normal operations
 [Wed Jan 29 12:36:10.889375 2020] [core:notice] [pid 1] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Jan 29 14:54:50.121656 2020] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+[Thu Jan 30 10:36:02.146233 2020] [ssl:warn] [pid 1] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.23.0.5. Set the 'ServerName' directive globally to suppress this message
+[Thu Jan 30 10:36:02.214204 2020] [ssl:warn] [pid 1] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Thu Jan 30 10:36:02.233592 2020] [ssl:warn] [pid 1] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Jan 30 10:36:02.245048 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.41 (Unix) OpenSSL/1.1.1d configured -- resuming normal operations
+[Thu Jan 30 10:36:02.246168 2020] [core:notice] [pid 1] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'

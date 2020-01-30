@@ -353,9 +353,30 @@ body.column2.side-right aside.side-left{
   bottom: -100px;
 }
 
+/* SNSボタン */
+.sns-buttons {
+  display: inline-block;
+  text-align: center;
+}
+.sns-buttons ul {
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.sns-buttons ul li {
+  float: left;
+}
+.sns-buttons ul li:last-child {
+  padding: 5px 0 0 5px;
+}
+
+
 /* ヘッダー画像 */
 .header-image {
-  background:url(/wp-content/themes/mytheme/images/header-image.jpg) 0 0 no-repeat;
+  background:url(../images/header-image.jpg) 0 0 no-repeat;
   padding-bottom: calc(100%*297/874);
   background-size: 100% auto;
 }
@@ -364,6 +385,10 @@ body.column2.side-right aside.side-left{
 .content main {
   margin-bottom: 64px;
   max-width:100%;
+}
+
+.content main .home-top a{
+  text-decoration:none;
 }
 
 /* パンくず */
@@ -395,35 +420,57 @@ body.column2.side-right aside.side-left{
   text-decoration: underline;
 }
 
-/* 投稿内容 */
-article.post {
+/* トップ */
+article.top a{
+  text-decoration: none;
+}
+article.top .entry-header {
+  margin: 0;
+}
+article.top {
   border-bottom: solid 1px #eee;
   margin-bottom: 48px;
 }
-
-article.post .entry-header {
-  margin-bottom: 36px;
-}
-
-article.post .entry-header a {
+article.top .entry-header a {
   text-decoration:none;
 }
-
-article.post .entry-title {
+article.top .entry-title {
   margin: 0;
 }
-
-article.post .entry-header .entry-meta {
-  margin-bottom: 36px;
-}
-
-article.post .entry-header .entry-meta a{
+article.top .entry-header .entry-meta a{
   color: #999;
   font-size: 93.8%;
   text-transform: uppercase;
 }
 
-article.post .entry-content blockquote {
+/* 投稿内容 */
+article.detail {
+  border-bottom: solid 1px #eee;
+  margin-bottom: 48px;
+}
+article.detail .entry-header {
+  margin-bottom: 36px;
+}
+article.detail .entry-header a {
+  text-decoration:none;
+}
+article.detail .entry-title {
+  margin: 0;
+}
+article.detail .entry-header .entry-meta a{
+  color: #999;
+  font-size: 93.8%;
+  text-transform: uppercase;
+}
+article.detail .entry-tags {
+  clear: both;
+  font-size: 14px;
+}
+article.detail .entry-tags .article-tag ul{
+  list-style: none;
+  padding: 0;
+}
+article.detail .entry-content blockquote {
   display: block;
   background-color:#efefef;
   margin-left: 0;
@@ -431,8 +478,7 @@ article.post .entry-content blockquote {
   position:relative;
   margin: 0;
 }
-
-article.post .entry-content blockquote:before {
+article.detail .entry-content blockquote:before {
   color: #ddd;
   content: "\201C";
   font-family: Georgia, serif;
@@ -442,18 +488,15 @@ article.post .entry-content blockquote:before {
   position: absolute;
   top: -5px;
 }
-
-article.post .entry-content blockquote p {
+article.detail .entry-content blockquote p {
   margin: 0;
 }
-
-article.post .entry-content .alignright {
+article.detail .entry-content .alignright {
   display: inline;
   float: right;
   margin: 3px 6px 6px 12px;
 }
-
-article.post .entry-content .caption-text {
+article.detail .entry-content .caption-text {
   color: #777;
   font-size: 93.8%;
   font-style: italic;
@@ -461,6 +504,111 @@ article.post .entry-content .caption-text {
   margin: 0.8em 0;
   text-align: center;
 }
+
+/* コメント */ 
+.entry-comments {
+}
+.entry-comments ol {
+  list-style: none;
+  list-style-position: inside;
+}
+.entry-comments ol li{
+  overflow: hidden;
+}
+.entry-comments ol li.even{
+  border-bottom: 1px solid #000;
+}
+.entry-comments ol .comment {
+}
+.entry-comments ol .children {
+  margin-left: 10%;
+}
+.entry-comments .reply{
+  background-color:#E5E5E5;
+  line-height: 20px;
+  width: 50px;
+  font-size: 10px;
+  text-align: center;
+  border: 1px solid #626262;
+  float: right;
+  margin-bottom: 2%;
+}
+.entry-comments .reply a {
+  color:#626262;
+  display: block;
+  text-decoration:none;
+}
+.entry-comments .comment-author{
+  width:15%;
+  float: left;
+  overflow: hidden;
+}
+.entry-comments .comment-author img{
+  display: block;
+}
+.entry-comments span.says{
+  display: none;
+}
+.entry-comments .comment-body{
+  clear: both;
+  margin-top: 2%;
+  overflow: hidden;    
+}
+.entry-comments .comment-body p{
+  overflow: hidden;
+  border:1px dashed #000;
+  padding:2%;
+  margin: 0 0 2% 0!important;
+}
+.entry-comments .fn {
+  display: block;
+  font-style: normal;
+  clear: both;
+  text-align: center;
+}
+.entry-comments .comment-meta{
+  text-align: right;
+  font-size: 12px;
+}
+.entry-comments .edit-link{
+  padding-left: 10px;
+}
+.entry-comments .comment-meta a{
+  color: #626262;
+}
+.entry-comments .comment-respond p {
+  margin-bottom: 2.5rem;
+}
+.entry-comments .comment-form p {
+  margin: 0 0 10px 0;
+}
+.entry-comments .comment-form p.logged-in-as {
+  font-size: 14px;
+}
+.entry-comments .comment-form p.comment-notes {
+  font-weight: bold;
+  font-size: 10px;
+  color: blue;
+}
+.entry-comments .comment-respond .comment-form-comment label {
+  display: block;
+}
+.entry-comments .comment-respond .comment-form-author,
+.entry-comments .comment-respond .comment-form-email {
+  float: left;
+  width: calc(50% - 1rem);
+}
+.entry-comments .comment-respond .comment-form-email {
+  margin-left: 2rem;
+}
+.entry-comments .comment-respond .comment-form-cookies-consent {
+  font-size: 12px;
+}
+.entry-comments .form-submit {
+  text-align: center;
+}
+
+
 
 /* 蛍光ペン風のマーカー線 */
 .marker_yellow {
@@ -504,17 +652,17 @@ article.post .entry-content .caption-text {
 .balloon-text-right,.balloon-text-left {
   position: relative;
   padding: 10px;
-  border: 1px solid;
+  border: 4px solid #0ba9ea;
   border-radius: 10px;
   max-width: -webkit-calc(100% - 120px);
   max-width: calc(100% - 120px);
   display: inline-block;
 }
 .balloon-text-right {
-  border-color: #aaa;
+  border-color: #0ba9ea;
 }
 .balloon-text-left {
-  border-color: #aaa;
+  border-color: #0ba9ea;
 }
 .balloon-text-right {
   float: left;
@@ -533,9 +681,9 @@ article.post .entry-content .caption-text {
   position: absolute;
   content: '';
   border: 10px solid transparent;
-  border-right: 10px solid #aaa;
+  border-right: 10px solid #0ba9ea;
   top: 15px;
-  left: -20px;
+  left: -24px;
 }
 .balloon-text-right:after {
   position: absolute;
@@ -549,9 +697,9 @@ article.post .entry-content .caption-text {
   position: absolute;
   content: '';
   border: 10px solid transparent;
-  border-left: 10px solid #aaa;
+  border-left: 10px solid #0ba9ea;
   top: 15px;
-  right: -20px;
+  right: -24px;
 }
 .balloon-text-left:after {
   position: absolute;
@@ -566,7 +714,7 @@ article.post .entry-content .caption-text {
   border-radius: 30px;
  }
  .think .balloon-text-right:before {
-  border: 1px solid #aaa;
+  border: 1px solid #0ba9ea;
   border-radius: 50%;
   width: 8px;
   height: 8px;
@@ -574,7 +722,7 @@ article.post .entry-content .caption-text {
   left: -12px;
  }
  .think .balloon-text-right:after {
-  border: 1px solid #aaa;
+  border: 1px solid #0ba9ea;
   border-radius: 50%;
   width: 4px;
   height: 4px;
@@ -582,7 +730,7 @@ article.post .entry-content .caption-text {
   left: -19px;
  }
  .think .balloon-text-left:before {
-  border: 1px solid #aaa;
+  border: 1px solid #0ba9ea;
   border-radius: 50%;
   width: 8px;
   height: 8px;
@@ -590,7 +738,7 @@ article.post .entry-content .caption-text {
   right: -12px;
  }
  .think .balloon-text-left:after {
-  border: 1px solid #aaa;
+  border: 1px solid #0ba9ea;
   border-radius: 50%;
   width: 4px;
   height: 4px;
@@ -683,27 +831,27 @@ article.post .entry-content .caption-text {
   min-width: 270px;
 }
 
-.widget {
+.sidebar-wrapper {
   line-height: 1.6;
   color: #555;
   font-size: 93.8%;
   margin-bottom: 48px;
 }
-.widget-title {
+.sidebar-title {
   font-size: 1.063rem;
   letter-spacing: 0;
   margin-bottom: 16px;
   margin-top: 0;
   text-transform: uppercase;
 }
-.widget ul {
+.sidebar-wrapper ul {
   padding: 0px;
 }
-.widget ul li:first-child {
+.sidebar-wrapper ul li:first-child {
   border-top: none;
   padding-top: 8px;
 }
-.widget ul li {
+.sidebar-wrapper ul li {
   list-style: none;
   border-top: solid 1px #eee;
   line-height: 1.4;
@@ -717,58 +865,56 @@ article.post .entry-content .caption-text {
 }
 
 /* カレンダー */
-.widget.calendar a{
+.calendar_wrap a{
   color: #000;
 }
-.widget.calendar table{
+.calendar_wrap table{
   width:250px;
   border-spacing: 0px;
   border-color:#999;
 }
-.widget.calendar .header{
+.calendar_wrap caption {
   line-height: 30px;
   padding: 0 10px 0 10px;
 }
-.widget.calendar .header a{
-  color: #fff;
-  text-decoration:none;
-}
-.widget.calendar .header .prev{
-  float: left;
-}
-.widget.calendar .header .next{
-  float: right;
-}
-.widget.calendar td,th{
+.calendar_wrap td,th{
   text-align: center;
   background-color:#ffffff;
   font-size:12px;
   padding:2px 0;
   border: 1px solid #999;
+  width: 25px;
+  height: 25px;
 }
-.widget.calendar th{
+.calendar_wrap th{
   color:white;
   background-color:#555;
 }
-.widget.calendar tr .sunday{
+.calendar_wrap tr .sun{
   color:#ff69b4;
 }
-.widget.calendar tr .saturday{
+.calendar_wrap tr .sat{
   color:#0ba9ea;
+}
+.calendar_wrap tfoot a{
+  text-decoration:none;
+}
+.calendar_wrap tfoot td {
+  border: none;
 }
 
 /* フッター */
-footer{
+.footer{
   background: #222;
   text-align:center;
   color:#fff;
 }
 
-footer .footer1{
+.footer .footer1{
   background:#999;
 }
 
-footer .footer2{
+.footer .footer2{
   font-size:.8rem;
 }
 
@@ -789,28 +935,6 @@ footer .footer2{
 }
 .menu-social-container i {
   padding-right: 8px;
-}
-
-/* コメント */
-.comment-respond {
-  
-}
-.comment-respond .commets-list{
-  padding-inline-start: 40px;
-  font-size: 12px;
-  list-style-type: none;
-  padding: 0 0 0 10px;
-  margin: 0;
-}
-.comment-respond .comment{
-  border-bottom: solid 1px #666;
-}
-.comment-respond .say{
-  font-size: 4px;
-  margin-left: 4px;
-}
-.comment-body {
-  padding-top: 10px;
 }
 
 /* 画面サイズが992pxより大きい場合に以下を適用 */
