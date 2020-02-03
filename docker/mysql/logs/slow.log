@@ -1938,3 +1938,37 @@ SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_usermeta`;
 # Query_time: 0.000222  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
 SET timestamp=1580362698;
 SELECT /*!40001 SQL_NO_CACHE */ * FROM `wp_users`;
+mysqld, Version: 5.7.28-log (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2020-02-03T08:41:24.995644Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.3]  Id:     2
+# Query_time: 0.053879  Lock_time: 0.043872 Rows_sent: 13  Rows_examined: 53
+use wordpress;
+SET timestamp=1580719284;
+SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (30, 39, 44, 47, 54, 60) ORDER BY t.name ASC;
+# Time: 2020-02-03T08:48:25.732041Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.3]  Id:     5
+# Query_time: 0.001367  Lock_time: 0.000238 Rows_sent: 7  Rows_examined: 43
+SET timestamp=1580719705;
+SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (39, 44, 47) ORDER BY t.name ASC;
+# Time: 2020-02-03T09:34:08.162731Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.3]  Id:    39
+# Query_time: 0.000682  Lock_time: 0.000171 Rows_sent: 1  Rows_examined: 4
+SET timestamp=1580722448;
+SELECT  COUNT(*) FROM wp_comments  WHERE ( ( comment_approved = '0' OR comment_approved = '1' ) ) AND user_id = 1  ORDER BY wp_comments.comment_date_gmt DESC;
+# Time: 2020-02-03T09:37:21.390872Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.3]  Id:    61
+# Query_time: 0.000576  Lock_time: 0.000130 Rows_sent: 2  Rows_examined: 6
+SET timestamp=1580722641;
+SELECT SQL_CALC_FOUND_ROWS wp_comments.comment_ID FROM wp_comments  WHERE ( ( comment_approved = '1' ) OR ( user_id = 1 AND comment_approved = '0' ) ) AND comment_post_ID = 54 AND comment_parent = 0  ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC;
+# Time: 2020-02-03T09:37:21.393221Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.3]  Id:    61
+# Query_time: 0.000704  Lock_time: 0.000260 Rows_sent: 0  Rows_examined: 4
+SET timestamp=1580722641;
+SELECT  wp_comments.comment_ID FROM wp_comments  WHERE ( ( comment_approved = '1' ) OR ( user_id = 1 AND comment_approved = '0' ) ) AND comment_post_ID = 54 AND comment_parent IN ( 2,3 )  ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC;
+# Time: 2020-02-03T09:37:49.648135Z
+# User@Host: root[root] @ docker_php_1.backend [172.23.0.3]  Id:    63
+# Query_time: 0.001634  Lock_time: 0.000260 Rows_sent: 12  Rows_examined: 51
+SET timestamp=1580722669;
+SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (30, 39, 44, 47, 54) ORDER BY t.name ASC;

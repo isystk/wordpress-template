@@ -1,4 +1,8 @@
-<!--カテゴリー一覧画面に表示するコンテンツ-->
+<?php
+ /*
+    アーカイブ(カテゴリー一覧など)に表示するコンテンツ
+ */
+?>
 <?php get_header(); ?>
 <div class="content">
   <main>
@@ -30,11 +34,11 @@
         echo '<p>'.$archive_description.'</p>';
       endif;
       ?>
-    </div><!--end archive-top-->
+    </div>
 
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
       <?php get_template_part('loop-content'); ?>
-    <?php endwhile; endif; ?><!--ループ終了-->
+    <?php endwhile; endif; ?>
 
     <div class="pagination">
     <?php echo paginate_links( array(
@@ -45,7 +49,7 @@
       ) ); ?>
     </div>
 
-    </main><!--end contents-->
+    </main>
   <?php get_sidebar(); ?>
-</div><!--end container-->
+</div>
 <?php get_footer(); ?>

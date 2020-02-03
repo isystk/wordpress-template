@@ -1,3 +1,8 @@
+<?php
+ /*
+    共通ヘッダーに表示するコンテンツ
+ */
+?>
 <!DOCTYPE HTML>
 <html lang="ja">
 <head>
@@ -130,12 +135,6 @@ if(!empty($title)) {
 <meta property="og:image" content="<?php echo $ogp_img; ?>">
 <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
 
-<!-- <meta name="twitter:site" content="@Twitterのユーザー名">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:creator" content="@Twitterのユーザー名">
-<meta name="twitter:description" content="<?php echo $description; ?>">
-<meta name="twitter:image:src" content="<?php echo $ogp_img; ?>"> -->
-
 <?php if(is_tag() || is_date() || is_search() || is_404()) : ?>
 <meta name="robots" content="noindex">
 <?php endif; ?>
@@ -144,13 +143,14 @@ if(!empty($title)) {
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/normalize.css">
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/prettify.css">
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/common.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" size="256x256" href="<?php echo get_template_directory_uri(); ?>/images/android-chrome.png">
+<link rel="alternate" type="application/rss+xml" title="フィード" href="<?php bloginfo('rss2_url'); ?>" />
+<link rel="alternate" type="application/rss+xml" title="コメントフィード" href="<?php bloginfo('comments_rss2_url'); ?>" />
 
-
-<?php wp_head(); ?><!--システム・プラグイン用-->
+<?php wp_head(); ?>
 </head>
 <body <?php body_class('column2 side-right'); ?>>
   <div id="fb-root"></div>
@@ -158,16 +158,12 @@ if(!empty($title)) {
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   <div class="wrap">
     <header class="header">
-      <div class="logo">Sample site</div>
+      <div class="logo"><?php echo $title; ?></div>
       <div id="menu-btn">
         <a href="#"><i class="fas fa-bars"></i></a>
       </div>
       <div class="search">
-        <form role="search" method="get" action="#">
-          <label>
-            <input type="search" placeholder="検索ワードを入力" value="" name="s">
-          </label>
-        </form>
+        <?php get_search_form(); ?>
       </div>
 
     </header>
@@ -175,17 +171,7 @@ if(!empty($title)) {
     <?php if( is_home() ): ?>
       <div class="header-image"></div>
     <?php endif; ?>
+
     <nav class="breadcrumb">
-      <ul>
-        <li>
-          <a href="/">
-            <span>ホーム</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span>HTML&amp;CSS</span>
-          </a>
-        </li>
-      </ul>
+      <?php breadcrumb(); ?>
     </nav>
