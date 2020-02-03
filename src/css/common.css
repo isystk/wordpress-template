@@ -285,6 +285,26 @@ body.column2.side-right aside.side-left{
   line-height: 42px;
 }
 
+#pc-menu {
+display: none;
+background:#222;
+padding:0 16px 0 16px;
+text-align: center;
+font-size: 16px;
+line-height: 32px;
+}
+#pc-menu nav {
+width:100%;
+}
+#pc-menu a {
+  color:#fff;
+}
+#pc-menu ul li{
+  display: inline;
+  padding: 20px;
+  margin-right: 20px;
+}
+
 /* 検索 */
 .header .search {
   display: none;
@@ -975,13 +995,8 @@ article.top a {
 
 /* 画面サイズが992pxより大きい場合に以下を適用 */
 @media screen and (min-width:992px){
-  .header {
-    padding:0 16px 0 32px;
-  }
-  .header .logo {
-    font-size: 32px;
-    margin: 0;
-    line-height: 44px;
+  #pc-menu {
+    display: block;
   }
   .header .search {
     display: block;

@@ -165,12 +165,20 @@ if(!empty($title)) {
       <div class="search">
         <?php get_search_form(); ?>
       </div>
-
     </header>
 
     <?php if( is_home() ): ?>
       <div class="header-image"></div>
     <?php endif; ?>
+
+    <div id="pc-menu">
+      <nav>
+        <ul>
+          <li><a href="/">HOME</a></li>
+          <?php wp_list_pages('title_li=');  ?>
+        </ul>
+      </nav>
+    </div>
 
     <nav class="breadcrumb">
       <?php breadcrumb(); ?>
