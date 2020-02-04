@@ -42,6 +42,8 @@
           <?php the_content(); ?>
         </div>
 
+        <div class="clearfix"></div>
+        
         <div class="entry-tags">
           <div class="article-tag">
             <?php the_tags('<ul><li>タグ： </li><li>','</li><li>','</li></ul>'
@@ -49,8 +51,6 @@
           </div>
         </div>
 
-        <div class="clearfix"></div>
-        
         <div class="entry-comments">
           <?php comments_template(); ?>
         </div>

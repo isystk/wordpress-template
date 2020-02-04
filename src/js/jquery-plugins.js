@@ -1,28 +1,32 @@
 (function($) {
 
-    // ドロワーメニュー
-    (function() {
-        $('#menu-btn').click(function(e) {
-            e.preventDefault();
-            var self = $(this),
-                menu = $('#menu');
-            menu.addClass('open');
-            menu.data('open', true);
-            $('body').addClass('scroll-prevent');
-			$('<div id="layer-panel"></div>')
-				.css('height', $(document).height())
-				.appendTo('body');
-        });
-        $('#menu .menu-close-btn').click(function(e) {
-            e.preventDefault();
-            var self = $(this),
-                menu = $('#menu');
-            menu.removeClass('open');
-            menu.data('open', false);
-            $('body').removeClass('scroll-prevent');
-			$('#layer-panel').remove();
-        });
-    })();
+	// ドロワーメニュー
+	(function() {
+			$('#menu-btn').click(function(e) {
+				e.preventDefault();
+				var self = $(this),
+						menu = $('#menu');
+				menu.addClass('open');
+				menu.data('open', true);
+				$('body').addClass('scroll-prevent');
+				$('<div id="layer-panel"></div>')
+					.css('height', $(document).height())
+					.appendTo('body');
+				$('#layer-panel').click(function(e) {
+					e.preventDefault();
+					$('#menu .menu-close-btn').trigger('click');
+				});
+			});
+			$('#menu .menu-close-btn').click(function(e) {
+				e.preventDefault();
+				var self = $(this),
+						menu = $('#menu');
+				menu.removeClass('open');
+				menu.data('open', false);
+				$('body').removeClass('scroll-prevent');
+				$('#layer-panel').remove();
+			});
+	})();
 
 	// ページトップに戻るボタンを表示
 	(function () {

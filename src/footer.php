@@ -23,6 +23,8 @@
     <div class="search">
       <?php get_search_form(); ?>
     </div>
+    
+    <?php #SPサイト向け遠ロワーメニュー用ナビゲーション ?>
     <nav>
       <?php wp_nav_menu( array(
               'theme_location'=>'drawer-nav', 
@@ -31,6 +33,7 @@
               'items_wrap'    =>'<ul>%3$s</ul>'));
       ?>
     </nav>
+
   </div>
   <?php wp_footer(); ?>
 </body>

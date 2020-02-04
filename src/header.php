@@ -169,6 +169,7 @@ if(!empty($title)) {
       <div class="header-image"></div>
     <?php endif; ?>
 
+    <?php #PCサイト向けヘッダーナビゲーション ?>
     <div id="pc-menu">
       <nav>
         <?php wp_nav_menu( array(
