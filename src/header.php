@@ -147,8 +147,6 @@ if(!empty($title)) {
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" size="256x256" href="<?php echo get_template_directory_uri(); ?>/images/android-chrome.png">
-<link rel="alternate" type="application/rss+xml" title="フィード" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="alternate" type="application/rss+xml" title="コメントフィード" href="<?php bloginfo('comments_rss2_url'); ?>" />
 
 <?php wp_head(); ?>
 </head>
