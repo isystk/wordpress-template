@@ -1,4 +1,4 @@
-$(function() {
+(function($) {
 
     // ドロワーメニュー
     (function() {
@@ -59,4 +59,4 @@ $(function() {
 	// ソースコードの表示
 	prettyPrint();
 
-});
+})(jQuery);
