@@ -12,16 +12,14 @@ add_theme_support( 'automatic-feed-links' );
 //アイキャッチ画像を使用する設定
 add_theme_support( 'post-thumbnails' );
 //カスタムメニュー
-register_nav_menu( 'header-nav',  ' ヘッダーナビゲーション ' );
-register_nav_menu( 'footer-nav',  ' フッターナビゲーション ' );
+register_nav_menu( 'header-nav',  'ヘッダーナビゲーション ' );
+register_nav_menu( 'drawer-nav',  'ドロワーナビゲーション ' );
 //jsの読み込み
 function my_scripts_method() {
-    wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', get_template_directory_uri() .'/js/jquery-3.4.1.min.js', array(), '3.4.1');
     wp_enqueue_script('underscore', get_template_directory_uri() .'/js/underscore.js', array('jquery'), '', true);
     wp_enqueue_script('prettify', get_template_directory_uri() .'/js/prettify.js', array('jquery'), '', true);
     wp_enqueue_script('lang-css', get_template_directory_uri() .'/js/lang-css.js', array('jquery'), '', true);
-    wp_enqueue_script('common', get_template_directory_uri() .'/js/common.js', array('jquery'), '', true);
+    wp_enqueue_script('jquery-plugins', get_template_directory_uri() .'/js/jquery-plugins.js', array('jquery'), '', true);
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 //サイドバーにウィジェット追加

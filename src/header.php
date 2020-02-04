@@ -171,10 +171,12 @@ if(!empty($title)) {
 
     <div id="pc-menu">
       <nav>
-        <ul>
-          <li><a href="/">HOME</a></li>
-          <?php wp_list_pages('title_li=');  ?>
-        </ul>
+        <?php wp_nav_menu( array(
+                'theme_location'=>'header-nav', 
+                'container'     =>'', 
+                'menu_class'    =>'',
+                'items_wrap'    =>'<ul>%3$s</ul>'));
+        ?>
       </nav>
     </div>
 
