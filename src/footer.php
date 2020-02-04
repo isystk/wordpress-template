@@ -25,16 +25,11 @@
     </div>
     <nav>
       <ul>
-        <li><a href="/">HOME</a></li>
+        <li><a href="/">TOP</a></li>
         <?php wp_list_pages('title_li=');  ?>
       </ul>
     </nav>
   </div>
-  <script src="<?php bloginfo('template_directory'); ?>/js/jquery-3.4.1.min.js"></script>
-  <script src="<?php bloginfo('template_directory'); ?>/js/underscore.js"></script>
-  <script src="<?php bloginfo('template_directory'); ?>/js/prettify.js"></script>
-  <script src="<?php bloginfo('template_directory'); ?>/js/lang-css.js"></script>
-  <script src="<?php bloginfo('template_directory'); ?>/js/common.js"></script>
   <?php wp_footer(); ?>
 </body>
 </html>

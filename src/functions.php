@@ -7,18 +7,23 @@
 //テーマのセットアップ
 // HTML5でマークアップさせる
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
-// Feedのリンクを自動で生成する
+//headタグ内にFeedのリンクを自動で生成する
 add_theme_support( 'automatic-feed-links' );
 //アイキャッチ画像を使用する設定
 add_theme_support( 'post-thumbnails' );
 //カスタムメニュー
 register_nav_menu( 'header-nav',  ' ヘッダーナビゲーション ' );
 register_nav_menu( 'footer-nav',  ' フッターナビゲーション ' );
-//メニュー用jsの読み込み
-function navbutton_scripts(){
-  wp_enqueue_script( 'navbutton_script', get_template_directory_uri() .'/js/navbutton.js', array('jquery'), '', true );
+//jsの読み込み
+function my_scripts_method() {
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', get_template_directory_uri() .'/js/jquery-3.4.1.min.js', array(), '3.4.1');
+    wp_enqueue_script('underscore', get_template_directory_uri() .'/js/underscore.js', array('jquery'), '', true);
+    wp_enqueue_script('prettify', get_template_directory_uri() .'/js/prettify.js', array('jquery'), '', true);
+    wp_enqueue_script('lang-css', get_template_directory_uri() .'/js/lang-css.js', array('jquery'), '', true);
+    wp_enqueue_script('common', get_template_directory_uri() .'/js/common.js', array('jquery'), '', true);
 }
-add_action( 'wp_enqueue_scripts' , 'navbutton_scripts' );
+add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 //サイドバーにウィジェット追加
 function widgetarea_init() {
 register_sidebar(array(
@@ -34,8 +39,7 @@ add_action( 'widgets_init', 'widgetarea_init' );
 
 // パンくずリスト
 function breadcrumb() {
-  $home = '<li><a href="'.get_bloginfo('url').'" >HOME</a></li>';
-
+  $home = '<li><a href="'.get_bloginfo('url').'" >TOP</a></li>';
   echo '<ul>';
   if ( is_front_page() ) {
       // トップページの場合
@@ -95,7 +99,6 @@ function breadcrumb() {
   }
   echo "</ul>";
 }
-
 // アーカイブの余計なタイトルを削除
 add_filter( 'get_the_archive_title', function ($title) {
   if ( is_category() ) {
@@ -118,3 +121,4 @@ function do_post_thumbnail_feeds($content) {
 }
 add_filter('the_excerpt_rss', 'do_post_thumbnail_feeds');
 add_filter('the_content_feed', 'do_post_thumbnail_feeds');
+
