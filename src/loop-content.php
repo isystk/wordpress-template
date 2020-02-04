@@ -44,4 +44,5 @@
       <a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a>
     */ ?>
   </div>
+  <div class="clearfix"></div>
 </article>
