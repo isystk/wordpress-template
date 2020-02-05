@@ -43,6 +43,8 @@ $ ./dc.sh init
 # サーバーを起動する
 $ ./dc.sh start
 
+# データベースが立ち上がるまで少し待ちます。(1分程度)
+
 # ブラウザでアクセス
 $ open http://localhost/
 ```
@@ -66,11 +68,6 @@ phpmyadmin でデータベースを管理できます。
 http://localhost:8888/
 
 ## Install
-
-```
-# 初期化してサーバーを起動する（初回のみ）
-$ ./dc.sh all init && ./dc.sh all start
-```
 
 ## Contribution
 
