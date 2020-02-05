@@ -60,7 +60,7 @@ $ ./dc.sh all init && ./dc.sh all start
 
 ## Licence
 
-[MIT](https://github.com/isystk/wordpress/LICENCE)
+[MIT](https://github.com/isystk/docker-wordpress/LICENCE)
 
 ## Author
 
