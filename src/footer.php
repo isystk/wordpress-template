@@ -1,40 +1,61 @@
 <?php
- /*
-    共通フッターに表示するコンテンツ
+/**
+ * The template for displaying the footer
+ *
+ * Contains the opening of the #site-footer div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty
+ * @since 1.0.0
  */
-?>
-    <footer class="footer">
-      <section class="footer1">
-        <div class="menu-social-container">
-          <ul class="menu">
-            <li><a href="https://twitter.com/ise0615"><i class="fab fa-twitter"></i>Twitter</a></li>
-            <li><a href="https://www.facebook.com/ise0615"><i class="fab fa-facebook"></i>Facebook</a></li>
-            <li><a href="<?php bloginfo('rss2_url'); ?>"><i class="fas fa-rss"></i>RSS</a></li>
-          </ul>
-        </div>
-      </section>
-      <section class="footer2">© 2020 <?php bloginfo( 'name' ); ?></section>
-    </footer>
-  </div>
-  <div id="menu">
-    <div>
-      <a href="" class="menu-close-btn"><i class="far fa-times-circle"></i></a>
-    </div>
-    <div class="search">
-      <?php get_search_form(); ?>
-    </div>
-    
-    <?php #SPサイト向け遠ロワーメニュー用ナビゲーション ?>
-    <nav>
-      <?php wp_nav_menu( array(
-              'theme_location'=>'drawer-nav', 
-              'container'     =>'', 
-              'menu_class'    =>'',
-              'items_wrap'    =>'<ul>%3$s</ul>'));
-      ?>
-    </nav>
 
-  </div>
-  <?php wp_footer(); ?>
-</body>
+?>
+			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+
+				<div class="section-inner">
+
+					<div class="footer-credits">
+
+						<p class="footer-copyright">&copy;
+							<?php
+							echo date_i18n(
+								/* translators: Copyright date format, see https://secure.php.net/date */
+								_x( 'Y', 'copyright date format', 'twentytwenty' )
+							);
+							?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+						</p><!-- .footer-copyright -->
+
+						<p class="powered-by-wordpress">
+							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
+								<?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
+							</a>
+						</p><!-- .powered-by-wordpress -->
+
+					</div><!-- .footer-credits -->
+
+					<a class="to-the-top" href="#site-header">
+						<span class="to-the-top-long">
+							<?php
+							/* translators: %s: HTML character for up arrow */
+							printf( __( 'To the top %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
+							?>
+						</span><!-- .to-the-top-long -->
+						<span class="to-the-top-short">
+							<?php
+							/* translators: %s: HTML character for up arrow */
+							printf( __( 'Up %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
+							?>
+						</span><!-- .to-the-top-short -->
+					</a><!-- .to-the-top -->
+
+				</div><!-- .section-inner -->
+
+			</footer><!-- #site-footer -->
+
+		<?php wp_footer(); ?>
+
+	</body>
 </html>

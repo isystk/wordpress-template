@@ -1,16 +1,36 @@
-<!-- 404.php -->
-<?php get_header(); ?>
-<div class="content">
-  <main>
-    <h2>404 Not Found（ページが見つかりませんでした）</h2>
-    <p>指定された以下のページは存在しないか、または移動した可能性があります。</p>
-    <p class="error_url">URL ：<span><?php echo get_pagenum_link(); ?></span></p>
-    <p>現在表示する記事がありません。よろしければ、検索ボックスにお探しのコンテンツに該当するキーワードを入力して下さい。</p>
-    <div class="search mb-10">
-      <?php get_search_form(); ?>
-    </div>
-    <p><a href="<?php echo home_url(); ?>" class="underline">トップページへ</a></p>
-  </main>
-  <?php get_sidebar(); ?>
-</div>
-<?php get_footer(); ?>
+<?php
+/**
+ * The template for displaying the 404 template in the Twenty Twenty theme.
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty
+ * @since 1.0.0
+ */
+
+get_header();
+?>
+
+<main id="site-content" role="main">
+
+	<div class="section-inner thin error404-content">
+
+		<h1 class="entry-title"><?php _e( 'Page Not Found', 'twentytwenty' ); ?></h1>
+
+		<div class="intro-text"><p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'twentytwenty' ); ?></p></div>
+
+		<?php
+		get_search_form(
+			array(
+				'label' => __( '404 not found', 'twentytwenty' ),
+			)
+		);
+		?>
+
+	</div><!-- .section-inner -->
+
+</main><!-- #site-content -->
+
+<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+
+<?php
+get_footer();
