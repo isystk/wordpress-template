@@ -2,7 +2,6 @@
 
 pushd ./docker
 
-MYSQL_CLIENT=$(dirname $0)/mysql/scripts
 PATH=$PATH:$MYSQL_CLIENT
 
 function usage {
@@ -35,13 +34,10 @@ case ${1} in
     init)
         # 停止＆削除（コンテナ・イメージ・ボリューム）
         docker-compose down --rmi all --volumes
-        rm -Rf ./mysql/data/*
         rm -Rf ./mysql/logs/*
         rm -Rf ./apache/logs/*
         rm -Rf ./php/logs/*
         rm -Rf ../public/wp-config.php
-        docker network create frontend
-        docker network create backend
     ;;
 
     start)
