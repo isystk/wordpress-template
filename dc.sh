@@ -32,7 +32,7 @@ case ${1} in
 
     init)
         # 停止＆削除（コンテナ・イメージ・ボリューム）
-        docker-compose down --rmi all --volumes
+        $DOCKER_COMPOSE down --rmi all --volumes
         rm -Rf ./mysql/logs/*
         rm -Rf ./apache/logs/*
         rm -Rf ./php/logs/*
@@ -40,11 +40,11 @@ case ${1} in
     ;;
 
     start)
-        docker-compose up -d
+        $DOCKER_COMPOSE up -d
     ;;
     
     stop)
-        docker-compose down
+        $DOCKER_COMPOSE down
     ;;
   
     apache)
