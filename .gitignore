@@ -6,3 +6,5 @@
 # mysql
 docker/mysql/logs
 docker/apache/logs
+
+htdocs/wp-config.php
