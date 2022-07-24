@@ -1,8 +1,7 @@
 #! /bin/bash
 
-pushd ./docker
-
-PATH=$PATH:$MYSQL_CLIENT
+DOCKER_HOME=./docker
+DOCKER_COMPOSE="docker-compose -f $DOCKER_HOME/docker-compose.yml"
 
 function usage {
     cat <<EOF
@@ -47,20 +46,53 @@ case ${1} in
     stop)
         docker-compose down
     ;;
-
-    mysql)
+  
+    apache)
       case ${2} in
           login)
-              mysql -u root -ppassword -h 127.0.0.1  
+              $DOCKER_COMPOSE exec apache /bin/sh
           ;;
-          dump)
-              mysqldump -u root -ppassword -h 127.0.0.1 -A > ./mysql/init/dump.sql
+          restart)
+              $DOCKER_COMPOSE restart apache
           ;;
           *)
               usage
           ;;
       esac
     ;;
+
+    mysql)
+      case ${2} in
+          login)
+              mysql -u root -ppassword -h 127.0.0.1  
+          ;;
+          export)
+              mysqldump -u root -ppassword -h 127.0.0.1 -A > ${3}
+          ;;
+          import)
+              mysql -u root -ppassword -h 127.0.0.1 --default-character-set=utf8mb4 < ${3}
+              $DOCKER_COMPOSE restart mysql
+          ;;
+          restart)
+              $DOCKER_COMPOSE restart mysql
+          ;;
+          *)
+              usage
+          ;;
+      esac
+    ;;
+      
+    php)
+      case ${2} in
+          login)
+              $DOCKER_COMPOSE exec php /bin/bash
+          ;;
+          *)
+              usage
+          ;;
+      esac
+    ;;
+    
     
     help|--help|-h)
         usage
