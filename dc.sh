@@ -36,7 +36,7 @@ case ${1} in
         rm -Rf ./mysql/logs/*
         rm -Rf ./apache/logs/*
         rm -Rf ./php/logs/*
-        rm -Rf ../public/wp-config.php
+        rm -Rf ../htdocs/wp-config.php
     ;;
 
     start)
