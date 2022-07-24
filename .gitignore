@@ -4,6 +4,5 @@
 !.gitkeep
 
 # mysql
-docker/mysql/data
 docker/mysql/logs
 docker/apache/logs

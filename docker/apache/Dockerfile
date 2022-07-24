@@ -1,7 +1,5 @@
 FROM alpine:latest
 
-MAINTAINER isystk
-
 # apacheのインストール
 RUN \
     apk add --no-cache \
@@ -20,7 +18,7 @@ RUN apk --update --no-cache add tzdata && \
     rm -rf /var/cache/apk/*
 
 # ポート設定
-EXPOSE 80 443
+EXPOSE 80 8080
 
 RUN mkdir -p /run/apache2
 
